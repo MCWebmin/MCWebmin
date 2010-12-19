@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Minecraft Checker</title>
+<title>MCWebmin</title>
 
 <body background="http://www.minecraft.net/img/bg.gif">
 
@@ -8,13 +8,13 @@
 <table align="center" border="1" bgcolor="#ffffff">
 <?php
 
-$ports = array (
+$servers = array (
      array('stef.si', 25565, 30, 'Survival MultiPlayer - Minecraft'),
      array('stef.si', 25566, 30, 'Classic Minecraft Multiplyer')
 );
 
 
-foreach ($ports as $port) {
+foreach ($servers as $port) {
 
      $fp = @fsockopen($port[0], $port[1], $errno, $errstr, $port[2]);
 
