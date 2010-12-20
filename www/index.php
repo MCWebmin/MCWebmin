@@ -1,10 +1,6 @@
-<html>
-<head>
-<title>MCWebmin</title>
+<?php include "../includes/header.template.php"
+?>
 
-<body background="http://www.minecraft.net/img/bg.gif">
-
-<center><img src="http://www.minecraft.net/img/logo_small.gif" alt="minecraft"></center>
 <table align="center" border="1" bgcolor="#ffffff">
 <?php
 
@@ -30,11 +26,10 @@ foreach ($servers as $port) {
 }
 ?>
 <tr>
-	<td><a href="scripts/start.php">START</a></td>
-	<td><a href="scripts/stop.php">STOP</a></td>
-	<td><a href="scripts/restart.php">RESTART</a></td>
+	<td><a href="../scripts/start.php">START</a></td>
+	<td><a href="../scripts/stop.php">STOP</a></td>
+	<td><a href="../scripts/restart.php">RESTART</a></td>
 <tr>
 </table>
-
-</body>
-</html>
+<?php include "../includes/footer.template.php"
+?>
