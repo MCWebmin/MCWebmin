@@ -1,4 +1,34 @@
 <?php
+if (isset($_GET['run'])) $linkchoice=$_GET['run'];
+else $linkchoice='';
+
+switch($linkchoice){
+
+case 'start' :
+    startServer();
+    break;
+
+case 'stop' :
+    stopServer();
+    break;
+
+case 'update' :
+    updateServer();
+    break;
+
+case 'restart' :
+    restartServer();
+    break;
+
+case 'status' :
+    statusServer();
+    break; 
+     
+case 'backup' :
+    backupServer();
+    break;      
+}
+
 function startServer(){
     $output = shell_exec("sudo /etc/init.d/minecraft start");
         echo $output;
@@ -11,18 +41,29 @@ function stopServer(){
         echo "<br />";
 }
 
-function upgrade(){
-    $output = shell_exec("sudo /etc/init.d/minecraft upgrade");
+function updateServer(){
+    $output = shell_exec("sudo /etc/init.d/minecraft update");
         echo $output;
         echo "<br />";
 }
 
-function status(){
+function restartServer(){
+    $output = shell_exec("sudo /etc/init.d/minecraft restart");
+        echo $output;
+        echo "<br />";
+}
+
+function statusServer(){
     $output = shell_exec("sudo /etc/init.d/minecraft status");
         echo $output;
         echo "<br />";
 }
 
+function backupServer(){
+    $output = shell_exec("sudo /etc/init.d/minecraft backup");
+        echo $output;
+        echo "<br />";
+}
 
 
 ?>

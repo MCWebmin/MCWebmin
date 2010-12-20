@@ -5,8 +5,7 @@
 <?php
 
 $servers = array (
-     array('stef.si', 25565, 30, 'Survival MultiPlayer - Minecraft'),
-     array('stef.si', 25566, 30, 'Classic Minecraft Multiplyer')
+     array('Test Server', 25565, 30, 'Survival MultiPlayer - Minecraft'),
 );
 
 
@@ -26,9 +25,14 @@ foreach ($servers as $port) {
 }
 ?>
 <tr>
-	<td><a href="../scripts/start.php">START</a></td>
-	<td><a href="../scripts/stop.php">STOP</a></td>
-	<td><a href="../scripts/restart.php">RESTART</a></td>
+	<td><a href="?run=start">START</a></td>
+	<td><a href="?run=stop">STOP</a></td>
+	<td><a href="?run=update">UPDATE</a></td>
+<tr>
+<tr>
+	<td><a href="?run=backup">BACKUP</a></td>
+	<td><a href="?run=restart">RESTART</a></td>
+	<td><a href="?run=status">STATUS</a></td>
 <tr>
 </table>
 <?php include "../includes/footer.template.php"
