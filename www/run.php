@@ -1,5 +1,5 @@
 <?php
-include "../includes/functions.php";
+include_once "../includes/functions.php";
 if (isset($_GET[''])) $linkchoice=$_GET['run'];
 switch($linkchoice){
 
