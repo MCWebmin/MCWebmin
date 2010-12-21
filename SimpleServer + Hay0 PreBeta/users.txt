@@ -1,0 +1,11 @@
+#Add your users here (When adding your entry DO NOT include #!)
+#The format is:
+#NAME:GROUPS:ADMIN/UNRESTRICTED:COLOR:COMMANDS:IPs
+#For administrative powers set admin/unrestricted to 2.
+#For no restrictions and ability to give out items set it to 1.
+#If you don't want the person to be able to build set it to -1.
+#Admin/unrestricted, color and commands are optional.
+#Examples:
+#Adminfoo:admins
+#Moderator39:mods:1:0:/unban
+#BobTheBuilder:vip:0:d

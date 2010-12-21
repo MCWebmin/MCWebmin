@@ -1,0 +1,12 @@
+#Add your groups here (When adding your entry DO NOT include #!)
+#The format is:
+#NAME:COLOR:COMMANDS:INHERITEDGROUPS:ADMIN/UNRESTRICTED
+#For administrative powers set admin/unrestricted to 2.
+#For no restrictions and ability to give out items set it to 1.
+#If you don't want the group to be able to build set it to -1.
+#Inherited groups and admin/unrestricted are optional.
+#Examples:
+admins:c:*:mods:2
+mods:b:/ban,/kick,/item,/tp,/tphere,/s,/i,/give:vip:1
+vip:a::default
+default:f:/help,/sethome,/home,/spawn,/me,/msg,/kit,/playerlist,/warp,/motd,/compass,/tell,/m,/who:default

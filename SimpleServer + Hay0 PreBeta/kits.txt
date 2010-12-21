@@ -1,0 +1,6 @@
+#Add your kits here. Example entry below (When adding your entry DO NOT include #!)
+#miningbasics:1,2,3,4:6000
+#The formats are (Find out more about groups in users.txt:
+#NAME:IDs:DELAY
+#NAME:IDs:DELAY:GROUP
+#6000 for delay is roughly 5 minutes.

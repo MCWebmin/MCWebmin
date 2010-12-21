@@ -1,0 +1,4 @@
+# List of Whitelisted Players
+# Case insensitive
+#
+#Tue Dec 21 23:44:17 CET 2010

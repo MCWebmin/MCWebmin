@@ -1,0 +1,43 @@
+2010-12-21 23:43:41 [INFO] Starting minecraft server version 0.2.8
+2010-12-21 23:43:41 [INFO] Loading properties
+2010-12-21 23:43:41 [INFO] Starting Minecraft server on 127.0.0.1:25566
+2010-12-21 23:43:41 [INFO] Note: your current classpath is: minecraft_server.jar
+2010-12-21 23:43:41 [INFO] Hey0 Server Mod Build 131
+2010-12-21 23:43:41 [INFO] Preparing level "world"
+2010-12-21 23:43:41 [INFO] Preparing start region
+2010-12-21 23:43:41 [INFO] Done! For help, type "help" or "?"
+2010-12-21 23:43:45 [INFO] Server mod help:
+2010-12-21 23:43:45 [INFO] help          Displays this mod's and server's help
+2010-12-21 23:43:45 [INFO] mod-help      Displays this mod's help
+2010-12-21 23:43:45 [INFO] version       Displays the server version
+2010-12-21 23:43:45 [INFO] reload        Reloads the config
+2010-12-21 23:43:45 [INFO] modify        Type modify for more info
+2010-12-21 23:43:45 [INFO] whitelist     Type whitelist for more info
+2010-12-21 23:43:45 [INFO] reservelist   Type reservelist for more info
+2010-12-21 23:43:45 [INFO] listplugins   Lists all plugins
+2010-12-21 23:43:45 [INFO] enableplugin  Enables a plugin
+2010-12-21 23:43:45 [INFO] disableplugin Disables a plugin
+2010-12-21 23:43:45 [INFO] reloadplugin  Reloads a plugin
+2010-12-21 23:43:45 [INFO] To run the server without a gui, start it like this:
+2010-12-21 23:43:45 [INFO]    java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+2010-12-21 23:43:45 [INFO] Console commands:
+2010-12-21 23:43:45 [INFO]    help  or  ?               shows this message
+2010-12-21 23:43:45 [INFO]    kick <player>             removes a player from the server
+2010-12-21 23:43:45 [INFO]    ban <player>              bans a player from the server
+2010-12-21 23:43:45 [INFO]    pardon <player>           pardons a banned player so that they can connect again
+2010-12-21 23:43:45 [INFO]    ban-ip <ip>               bans an IP address from the server
+2010-12-21 23:43:45 [INFO]    pardon-ip <ip>            pardons a banned IP address so that they can connect again
+2010-12-21 23:43:45 [INFO]    op <player>               turns a player into an op
+2010-12-21 23:43:45 [INFO]    deop <player>             removes op status from a player
+2010-12-21 23:43:45 [INFO]    tp <player1> <player2>    moves one player to the same location as another player
+2010-12-21 23:43:45 [INFO]    give <player> <id> [num]  gives a player a resource
+2010-12-21 23:43:45 [INFO]    tell <player> <message>   sends a private message to a player
+2010-12-21 23:43:45 [INFO]    stop                      gracefully stops the server
+2010-12-21 23:43:45 [INFO]    save-all                  forces a server-wide level save
+2010-12-21 23:43:45 [INFO]    save-off                  disables terrain saving (useful for backup scripts)
+2010-12-21 23:43:45 [INFO]    save-on                   re-enables terrain saving
+2010-12-21 23:43:45 [INFO]    list                      lists all currently connected players
+2010-12-21 23:43:45 [INFO]    say <message>             broadcasts a message to all players
+2010-12-21 23:44:03 [INFO] CONSOLE: Stopping the server..
+2010-12-21 23:44:03 [INFO] Stopping server
+2010-12-21 23:44:03 [INFO] Saving chunks
