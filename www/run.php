@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 include "../includes/functions.php";
 if (isset($_GET['run'])) $linkchoice=$_GET['run'];
 else $linkchoice='';
