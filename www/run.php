@@ -6,27 +6,27 @@ else $linkchoice='';
 switch($linkchoice){
 
 case 'start' :
-    startServer()
+    startServer();
     break;
 
 case 'stop' :
-    stopServer()
+    stopServer();
     break;
 
 case 'update' :	
-    updateServer()
+    updateServer();
     break;
 
 case 'restart' :
-    restartServer()
+    restartServer();
     break;
 
 case 'status' :
-    statusServer()
+    statusServer();
     break; 
      
 case 'backup' :
-    backupServer()
+    backupServer();
     break;      
 }
 ?>
