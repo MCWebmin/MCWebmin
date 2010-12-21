@@ -3,10 +3,8 @@ if (isset($_GET['run'])) $linkchoice=$_GET['run'];
 switch($linkchoice){
 
 case 'start' :
-    $output = shell_exec("/usr/bin/sudo -u mcwebmin /etc/init.d/minecraft start");
-	echo $output;
-	echo "$output";
-	echo "<br />";
+    $command = '/usr/bin/sudo -u mcwebmin /etc/init.d/minecraft start';
+	exec($command);
     break;
 
 case 'stop' :
@@ -21,7 +19,7 @@ case 'update' :
 	echo "<br />";
     break;
 
-case 'restart' : 
+case 'restart' :
     $output = shell_exec("/usr/bin/sudo -u mcwebmin /etc/init.d/minecraft restart");
 	echo $output;
 	echo "<br />";
