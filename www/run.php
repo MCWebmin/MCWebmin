@@ -1,4 +1,5 @@
 <?php
+if (isset($_POST['run']))
 $linkchoice=$_GET['run'];
 switch($linkchoice){
 case 'start' :
