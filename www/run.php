@@ -6,6 +6,8 @@ switch($linkchoice){
 case 'start' :
     startServer();
 	echo $output;
+	echo "$output";
+	echo "Starting Server";
 	echo "<br />";
     break;
 
