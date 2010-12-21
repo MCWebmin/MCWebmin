@@ -11,11 +11,11 @@ include "rcon.class.php";
 <body background="http://www.minecraft.net/img/bg.gif">
 
 <!-- CSS Stylesheets -->
-<link rel="stylesheet" href="/css/style.css" type="text/css">
-<link rel="stylesheet" href="/css/greybox.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/greybox.css" type="text/css" media="all" />
 
 <!-- Javascript -->
-<script type="text/javascript" src="/js/greybox.js"></script>
+<script type="text/javascript" src="js/greybox.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
       var GB_ANIMATION = true;
