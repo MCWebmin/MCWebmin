@@ -4,7 +4,6 @@
 <!-- Include PHP Files -->
 <?php 
 include "config.php";
-include_once "functions.php";
 include_once "run.php";
 include_once "rcon.class.php"; 
 ?>

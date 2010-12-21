@@ -1,48 +1,40 @@
 <?php
-include_once "../includes/functions.php";
 if (isset($_GET['run'])) $linkchoice=$_GET['run'];
 switch($linkchoice){
 
 case 'start' :
-    startServer();
-	$output;
+    $output = shell_exec("sudo /etc/init.d/minecraft start");
 	echo $output;
 	echo "$output";
-	echo "Starting Server";
 	echo "<br />";
     break;
 
 case 'stop' :
-    stopServer();
-	$output;
+    $output = shell_exec("sudo /etc/init.d/minecraft stop");
 	echo $output;
 	echo "<br />";
     break;
 
 case 'update' :
-    updateServer();
-	$output;
+    $output = shell_exec("sudo /etc/init.d/minecraft update");
 	echo $output;
 	echo "<br />";
     break;
 
 case 'restart' :
-    restartServer();
-	$output;
+    $output = shell_exec("sudo /etc/init.d/minecraft restart");
 	echo $output;
 	echo "<br />";
     break;
 
 case 'status' :
-    statusServer();
-	$output;
+    $output = shell_exec("sudo /etc/init.d/minecraft status");
 	echo $output;
 	echo "<br />";
     break; 
      
 case 'backup' :
-    backupServer();
-	$output;
+    $output = shell_exec("sudo /etc/init.d/minecraft backup");
 	echo $output;
 	echo "<br />";
     break;      
