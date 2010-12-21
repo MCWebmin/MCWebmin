@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['run'])) $linkchoice=$_GET['run'];
-switch($linkchoice){
+if (isset($_GET['run']) && function_exists($_GET['run'])){
+switch($run){
 
 case 'start' :
     $output = shell_exec("/usr/bin/sudo -u mcwebmin /etc/init.d/minecraft start");
@@ -37,4 +37,8 @@ case 'backup' :
 	echo "<br />";
     break;      
 }
+else {
+  echo 'Function not found';
+}
+
 ?>
