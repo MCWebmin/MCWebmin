@@ -5,7 +5,6 @@ This software is designed to be installed in
 /usr/local/mcwebmin/
 and run under the user mcwebmin with a webserver (Tested with lighttpd and apache2) running under mcwebmin and running the the directory /usr/local/mcwebmin/www/
 
-The user mcwebmin needs to be added to the sudoers file, so that it is alowed to interact with the minecraft init.d script. Check installfiles/sudoers
 
 
 Built On
