@@ -1,8 +1,10 @@
 <?php
 include "../includes/functions.php";
 if (isset($_GET['run'])) $linkchoice=$_GET['run'];
-else $linkchoice=''; 
+else $linkchoice='';
+
 switch($linkchoice){
+
 case 'start' :
     startServer()
     break;
