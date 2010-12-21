@@ -1,3 +1,4 @@
+<?php
 if (isset($_GET['run'])) $linkchoice=$_GET['run'];
 else $linkchoice='';
 
@@ -39,3 +40,4 @@ case 'backup' :
 	echo "<br />";
     break;      
 }
+?>
