@@ -6,7 +6,7 @@
 include "config.php";
 include "functions.php";
 include "run.php";
-include_once "rcon.class.php"; 
+include "rcon.class.php"; 
 ?>
 <!-- Background -->
 <body background="http://www.minecraft.net/img/bg.gif">

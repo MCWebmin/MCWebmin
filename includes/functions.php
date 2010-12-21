@@ -20,7 +20,7 @@ function restartServer(){
 }
 
 function statusServer(){
-    $output = shell_ exec("sudo /etc/init.d/minecraft status");
+    $output = shell_exec("sudo /etc/init.d/minecraft status");
 	echo "Server Status";
 }
 
