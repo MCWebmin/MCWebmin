@@ -3,7 +3,7 @@
 
 <table align="center" border="1" bgcolor="#ffffff">
 
-<tr><td>Server Name</font></td><td bgcolor=\"red\">Status</td><td>Port</td></tr>
+<tr><td><?php echo $ip ?></font></td><td bgcolor=\"red\">Status</td><td><?php echo $port ?></td></tr>
 
 <tr>
 	<td><a href="?run=start">START</a></td>
