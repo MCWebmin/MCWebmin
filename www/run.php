@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['run']))
-$linkchoice=$_GET['run'];
+$linkchoice=$_POST['run'];
 switch($linkchoice){
 case 'start' :
     $output = shell_exec("/usr/bin/sudo -u mcwebmin /etc/init.d/minecraft start");
