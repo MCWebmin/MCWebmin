@@ -1,16 +1,16 @@
 <html>
 <head>
 <title>MCWebmin</title>
-<-- Include PHP Files -->
+<!-- Include PHP Files -->
 <?php 
 include "config.php";
 include "functions.php";
 include "rcon.class.php"; 
 ?>
-<-- Background -->
+<!-- Background -->
 <body background="http://www.minecraft.net/img/bg.gif">
 
-<-- CSS Stylesheets -->
+<!-- CSS Stylesheets -->
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="/css/greybox.css" type="text/css" media="all" />
 
