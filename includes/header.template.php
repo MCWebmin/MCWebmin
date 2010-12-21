@@ -5,7 +5,6 @@
 <?php 
 include "config.php";
 include "functions.php";
-include "run.php";
 include "rcon.class.php"; 
 ?>
 <!-- Background -->
