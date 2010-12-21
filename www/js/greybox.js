@@ -15,7 +15,7 @@ function GB_show(caption, url, height, width) {
   if(!GB_DONE) {
     $(document.body)
       .append("<div id='GB_overlay'></div><div id='GB_window'><div id='GB_caption'></div>"
-        + "<img src='close.gif' alt='Close window'/></div>");
+        + "<img src='/images/close.gif' alt='Close window'/></div>");
     $("#GB_window img").click(GB_hide);
     $("#GB_overlay").click(GB_hide);
     $(window).resize(GB_position);
