@@ -1,25 +1,25 @@
 <?php
 function startServer(){
-    $output = exec("sudo /etc/init.d/minecraft start");
+    $output = shell_exec("sudo /etc/init.d/minecraft start");
 }
 
 function stopServer(){
-    $output = exec("sudo /etc/init.d/minecraft stop");
+    $output = shell_exec("sudo /etc/init.d/minecraft stop");
 }
 
 function updateServer(){
-    $output = exec("sudo /etc/init.d/minecraft update");
+    $output = shell_exec("sudo /etc/init.d/minecraft update");
 }
 
 function restartServer(){
-    $output = exec("sudo /etc/init.d/minecraft restart");
+    $output = shell_exec("sudo /etc/init.d/minecraft restart");
 }
 
 function statusServer(){
-    $output = exec("sudo /etc/init.d/minecraft status");
+    $output = shell_ exec("sudo /etc/init.d/minecraft status");
 }
 
 function backupServer(){
-    $output = exec("sudo /etc/init.d/minecraft backup");
+    $output = shell_exec("sudo /etc/init.d/minecraft backup");
 }
 ?>
