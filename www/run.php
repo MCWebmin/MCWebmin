@@ -1,6 +1,6 @@
 <?php
 include_once "../includes/functions.php";
-if (isset($_GET[''])) $linkchoice=$_GET[''];
+if (isset($_GET['run'])) $linkchoice=$_GET['run'];
 switch($linkchoice){
 
 case 'start' :
