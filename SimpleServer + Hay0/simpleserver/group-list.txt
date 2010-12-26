@@ -1,0 +1,12 @@
+# Group -1 is defined as guest
+# Group 0 is defined as normal player
+# Format:
+#  GID=Name,showTitle,isAdmin,colorCode
+#
+#Sun Dec 26 12:08:41 CET 2010
+4=Owner,true,true,3
+3=Admin,true,true,2
+2=Mod,true,true,1
+1=Trusted,false,false,1
+0=Player,false,false,f
+-1=Guest,true,false,f

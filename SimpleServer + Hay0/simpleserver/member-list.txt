@@ -1,0 +1,4 @@
+# List of players and their group id
+#
+#Sun Dec 26 12:08:41 CET 2010
+spiegalpwns=0

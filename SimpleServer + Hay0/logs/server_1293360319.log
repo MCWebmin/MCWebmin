@@ -1,0 +1,20 @@
+2010-12-26 11:45:19 [INFO] Starting minecraft server version Beta 1.1_02
+2010-12-26 11:45:19 [INFO] Loading properties
+2010-12-26 11:45:19 [WARNING] server.properties does not exist
+2010-12-26 11:45:19 [INFO] Generating new properties file
+2010-12-26 11:45:19 [INFO] Starting Minecraft server on *:25565
+2010-12-26 11:45:19 [INFO] Note: your current classpath is: minecraft_server.jar
+2010-12-26 11:45:19 [INFO] Hey0 Server Mod Build 132
+2010-12-26 11:45:19 [WARNING] Failed to load ban list: java.io.FileNotFoundException: banned-players.txt (The system cannot find the file specified)
+2010-12-26 11:45:19 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: banned-ips.txt (The system cannot find the file specified)
+2010-12-26 11:45:19 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: ops.txt (The system cannot find the file specified)
+2010-12-26 11:45:19 [INFO] Preparing level "world"
+2010-12-26 11:45:19 [INFO] Preparing start region
+2010-12-26 11:45:24 [INFO] Done! For help, type "help" or "?"
+2010-12-26 11:45:49 [INFO] Squeazer [/127.0.0.1:53561] logged in with entity id 5154
+2010-12-26 11:47:19 [INFO] Squeazer lost connection: disconnect.quitting
+2010-12-26 11:47:23 [INFO] Squeazer [/127.0.0.1:53570] logged in with entity id 6789
+2010-12-26 11:47:28 [INFO] Squeazer lost connection: disconnect.quitting
+2010-12-26 11:55:01 [INFO] CONSOLE: Stopping the server..
+2010-12-26 11:55:01 [INFO] Stopping server
+2010-12-26 11:55:01 [INFO] Saving chunks

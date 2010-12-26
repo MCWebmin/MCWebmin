@@ -1,0 +1,4 @@
+# list of muted players
+# case insensitive
+#
+#Sun Dec 26 12:08:41 CET 2010

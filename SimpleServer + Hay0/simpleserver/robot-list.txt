@@ -1,0 +1,3 @@
+# List IPs that are known robots/server lists/pingers.
+#
+#Sun Dec 26 12:08:41 CET 2010
