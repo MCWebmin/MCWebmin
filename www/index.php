@@ -1,5 +1,12 @@
-<?php include "../includes/header.template.php"
+<?php 
+include "../includes/header.template.php"
 ?>
+	<div id="bd">
+			
+			<div id="yui-main">
+				<div class="yui-b">
+					<div class="yui-g">
+						<div class="main_content">
 
 <table align="center" border="1" bgcolor="#ffffff">
 
@@ -16,5 +23,11 @@
 	<td><a href="run.php?run=status" class="greybox">STATUS</a></td>
 <tr>
 </table>
-<?php include "../includes/footer.template.php"
+
+						</div>
+					</div>
+				</div>
+			</div>
+<?php 
+include "../includes/footer.template.php"
 ?>
