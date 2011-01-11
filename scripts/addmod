@@ -2,8 +2,8 @@
 
 # Options are: hmod, runecraft
 
-#DIRECTORY="/usr/local/mcwebmin/"
-#cd $DIRECTORY
+DIRECTORY="/usr/local/mcwebmin/minecraft/"
+cd $DIRECTORY
 
 if [ ! -e "minecraft_server.jar" ]
 then

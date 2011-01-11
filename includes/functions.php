@@ -28,4 +28,24 @@ function backupServer(){
     $output = shell_exec("/etc/init.d/minecraft backup");
 	echo "$output";
 }
+
+function installHmod(){
+    $output = shell_exec("../scripts/addmod hmod");
+	echo "$output";
+}
+
+function uninstallHmod(){
+    $output = shell_exec("../scripts/removemod hmod");
+	echo "$output";
+}
+
+function installRunecraft(){
+    $output = shell_exec("../scripts/addmod runecraft");
+	echo "$output";
+}
+
+function uninstallRunecraft(){
+    $output = shell_exec("../scripts/removemod runecraft");
+	echo "$output";
+}
 ?>
