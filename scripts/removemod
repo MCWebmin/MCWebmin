@@ -13,17 +13,26 @@ RCLIST="kw.class mm.class rm.class rn.class rt.class v.class"
 if [ ! -e "minecraft_server.jar" ]
 then
 	echo "minecraft_server.jar not found, check your settings!"
-else
+else	
 	#Remove hmod
 	if [ "$1" = "hmod" ]; then
+	#Stop server
+		/etc/init.d/minecraft stop
+		echo "Server stopped"
 		zip -d minecraft_server.jar $HMODLIST
 		# Update manifest - not sure if needed, must test
 		jar umf manifest minecraft_server.jar
 		echo "Hmod removed!"
+		/etc/init.d/minecraft start
+		echo "Server started"
 	fi
 	#Remove runecraft
 	if [ "$1" = "runecraft" ]; then
+		/etc/init.d/minecraft stop
+		echo "Server stopped"
 		zip -d minecraft_server.jar $RCLIST
 		echo "RuneCraft removed!"
+		/etc/init.d/minecraft start
+		echo "Server started"
 	fi
 fi
