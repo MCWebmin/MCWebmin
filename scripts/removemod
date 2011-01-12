@@ -9,6 +9,8 @@ cd $DIRECTORY
 HMODLIST='af.class ao.class av.class aw.class az.class ba.class Ban.class BanSystem.class BaseCommand.class BaseContainerBlock.class BaseEntity.class BaseVehicle.class bb.class bg.class Block$1.class Block.class Block$Face.class Block$Type.class Boat.class bo.class cf.class Chest.class ci.class cl.class Colors.class ComplexBlock.class Container.class cq.class cu.class cw.class DataSource.class DelayedTask.class di.class Digging.class dk.class DoubleChest.class eh.class ek.class em.class ep.class etc$1.class etc.class fi.class FlatFileSource.class Furnace.class gc.class gl.class gq.class Group.class hb.class hf.class hh.class HitBlox.class hj.class hl.class hp.class ht.class HumanEntity.class hx.class ii.class in.class Inventory.class it.class ItemArray.class Item.class Item$Type.class jb.class jh.class jy.class kh.class Kit.class kj.class kk.class kq.class ks.class kv.class lc.class le.class LivingEntity.class Location.class MessageReceiver.class Minecart.class Minecart$Type.class Mob.class MobSpawner.class MyClassLoader.class MySQLSource.class Player.class PlayerInventory.class Plugin.class PluginInterface.class PluginListener.class PluginListener$Priority.class PluginLoader$1.class PluginLoader.class PluginLoader$DamageType.class PluginLoade $Hook.class PluginLoader$HookResult.class PluginRegisteredListener.class PropertiesFile.class Server.class ServerConsoleCommands$1.class ServerConsoleCommands$2.class ServerConsoleCommands$3.class ServerConsoleCommands$4.class ServerConsoleCommands$5.class ServerConsoleCommands$6.class ServerConsoleCommands$7.class ServerConsoleCommands$8.class ServerConsoleCommands$9.class ServerConsoleCommands.class Sign.class StorageMinecart.class version.txt Warp.class Workbench.class' 
 
 RCLIST="kw.class mm.class rm.class rn.class rt.class v.class"
+
+LCLIST="af.class az.class cx.class kh.class kk.class"
  
 if [ ! -e "minecraft_server.jar" ]
 then
@@ -18,21 +20,31 @@ else
 	if [ "$1" = "hmod" ]; then
 	#Stop server
 		/etc/init.d/minecraft stop
-		echo "Server stopped"
 		zip -d minecraft_server.jar $HMODLIST
 		# Update manifest - not sure if needed, must test
 		jar umf manifest minecraft_server.jar
 		echo "Hmod removed!"
+	#Start server
 		/etc/init.d/minecraft start
-		echo "Server started"
 	fi
+
 	#Remove runecraft
 	if [ "$1" = "runecraft" ]; then
+	#Stop server
 		/etc/init.d/minecraft stop
-		echo "Server stopped"
 		zip -d minecraft_server.jar $RCLIST
 		echo "RuneCraft removed!"
+	#Start server
 		/etc/init.d/minecraft start
-		echo "Server started"
+	fi
+
+	#Remove llamacraft
+	if [ "$1" = "runecraft" ]; then
+	#Stop server
+		/etc/init.d/minecraft stop
+		zip -d minecraft_server.jar $RCLIST
+		echo "RuneCraft removed!"
+	#Start server
+		/etc/init.d/minecraft start
 	fi
 fi

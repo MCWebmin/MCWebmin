@@ -17,8 +17,8 @@
 #Settings
 SERVICE='SimpleServer.jar'
 USERNAME="mcwebmin"
-MCPATH='/usr/local/mcwebmin/minecraft'
-BACKUPPATH='/usr/local/mcwebmin/backup/'
+MCPATH='/usr/local/mcwebmin/minecraft'  #No last backslash!
+BACKUPPATH='/usr/local/mcwebmin/backup' #No last backslash!
 
 ME="whoami"
 as_user() {

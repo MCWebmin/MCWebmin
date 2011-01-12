@@ -30,22 +30,22 @@ function backupServer(){
 }
 
 function installHmod(){
-    $output = shell_exec("../scripts/addmod hmod");
+    $output = shell_exec("sudo ../scripts/addmod hmod");
 	echo "$output";
 }
 
 function uninstallHmod(){
-    $output = shell_exec("../scripts/removemod hmod");
+    $output = shell_exec("sudo ../scripts/removemod hmod");
 	echo "$output";
 }
 
 function installRunecraft(){
-    $output = shell_exec("../scripts/addmod runecraft");
+    $output = shell_exec("sudo ../scripts/addmod runecraft");
 	echo "$output";
 }
 
 function uninstallRunecraft(){
-    $output = shell_exec("../scripts/removemod runecraft");
+    $output = shell_exec("sudo ../scripts/removemod runecraft");
 	echo "$output";
 }
 ?>

@@ -28,7 +28,6 @@ if [ "$1" = "hmod" ]; then
 
 	# Adds hmod to minecraft_server.jar
 	/etc/init.d/minecraft stop
-	echo "Server stopped"
 	unzip hmod/bin/Minecraft_Mod.jar -d hmodjar/
 	cd hmodjar/
 	rm -r Main.class META-INF/
@@ -37,13 +36,12 @@ if [ "$1" = "hmod" ]; then
 
 
 	# Update manifest - not sure if needed, must test
-	jar umf hmod_manifest minecraft_server.jar
+	jar umf ../scripts/hmod_manifest minecraft_server.jar
 	
 	# Create plugins dir
 	mkdir plugins/
 	#Start the server
 	/etc/init.d/minecraft start
-	echo "Server stopped"
 	# Clean up
 	rm -r hmod/ hmodjar/ hmod.zip
 
@@ -65,7 +63,6 @@ if [ "$1" = "runecraft" ]; then
 
 	#Stop server
 	/etc/init.d/minecraft stop
-	echo "Server stopped"
 
 	# Adds all of the files to the minecraft jar
 	cd runecraft/
@@ -74,10 +71,39 @@ if [ "$1" = "runecraft" ]; then
 
 	#Start server
 	/etc/init.d/minecraft start
-	echo "Server started"
 
 	# Cleans up
 	rm -r runecraft/ runecraft_latest.zip
+
+	echo "Finished"
+fi
+
+if [ "$1" = "llamacraft" ]; then
+
+	#Download Llamacraft
+	if [ ! -e "llamacraft_latest.zip" ]
+	then
+	    wget http://llama.cerberusstudios.net/llamacraft_latest.zip
+	else
+	    echo "It exists, moving on"
+	fi
+
+	# Unzips llamacraft to a directory
+	unzip llamacraft_latest.zip -d llamacraft/
+
+	#Stop server
+	/etc/init.d/minecraft stop
+
+	# Adds all of the files to the minecraft jar
+	cd llamacraft/
+	jar uvf ../minecraft_server.jar ./*
+	cd ..
+
+	#Start server
+	/etc/init.d/minecraft start
+
+	# Cleans up
+	rm -r llamacraft/ llamacraft_latest.zip
 
 	echo "Finished"
 fi
