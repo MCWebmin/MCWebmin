@@ -5,6 +5,8 @@ This software is designed to be installed in
 /usr/local/mcwebmin/
 and run under the user mcwebmin with a webserver (Tested with lighttpd and apache2) running under mcwebmin and running the the directory /usr/local/mcwebmin/www/
 
+MCWebmin officialy supports Debian and Ubuntu, but it should work on most other linux distributions. It does NOT work on Windows, support for that will maybe be added later.
+
 
 
 Built On

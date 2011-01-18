@@ -1,0 +1,24 @@
+<VirtualHost *:80>
+	ServerName $DOMAIN
+
+	DocumentRoot /var/www/ec2.ndure.eu/minecraft
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/ec2.ndure.eu/minecraft/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	<IfModule mpm_itk_module>
+	AssignUserId minecraft minecraft
+	</IfModule>
+
+	ErrorLog /usr/local/minecraft/log/error.log
+	LogLevel warn
+	CustomLog /usr/local/minecraft/log/access.log combined
+
+</VirtualHost>
