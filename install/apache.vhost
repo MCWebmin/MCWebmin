@@ -1,12 +1,10 @@
-<VirtualHost *:80>
-	ServerName $DOMAIN
 
-	DocumentRoot /var/www/ec2.ndure.eu/minecraft
+	DocumentRoot /usr/local/mcwebmin/www
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory /var/www/ec2.ndure.eu/minecraft/>
+	<Directory /usr/local/mcwebmin/www/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride None
 		Order allow,deny

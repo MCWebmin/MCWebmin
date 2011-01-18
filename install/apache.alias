@@ -1,4 +1,3 @@
-	Alias $ALIAS /usr/local/mcwebmin/www	
 
 	<Directory /var/www/ec2.ndure.eu/minecraft/>
 		Options Indexes FollowSymLinks MultiViews
