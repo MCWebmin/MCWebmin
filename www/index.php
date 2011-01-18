@@ -1,5 +1,6 @@
 <?php 
 include "../includes/header.template.php"
+// test cowguru
 ?>
 	<div id="bd">
 			
