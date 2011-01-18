@@ -1,0 +1,87 @@
+body {
+        background-color: #000;
+        color: #bbb;
+        font-family: sans-serif;
+}
+
+h1 {
+        color: #fff;
+        font-size: 24pt;
+        text-transform: uppercase;
+        font-weight: bold;
+}
+
+h2 {
+        color: #fff;
+        font-size: 16pt;
+        font-variant: small-caps;
+        font-weight: bold;
+}
+
+h3 {
+        color: #fff;
+        font-size: 14pt;
+        font-variant: small-caps;
+        font-weight: bold;
+}
+
+label {
+        font-weight: bold;
+        color: #ff0;
+}
+
+*.label {
+}
+
+a {
+        color: #44f;
+}
+
+a:hover {
+        color: #aaf;
+}
+
+a:active {
+        color: #88f;
+}
+
+*.error {
+        font-weight: bold;
+        color: #fa0;
+}
+
+#chat_frame {
+        border-style: solid;
+        border-color: #0f0;
+        border-width: 2px;
+        padding: 4px;
+        width: 60%;
+        height: 400px;
+        float: left;
+}
+
+#who_frame {
+        border-style: solid;
+        border-color: #0f0;
+        border-width: 2px 2px 2px 0px;
+        padding: 4px;
+        width: 30%;
+        float: left;
+        height: 400px;
+}
+
+#response_window {
+        background-color: #222;
+        height: 378px;
+        overflow: scroll;
+}
+
+#input_field {
+        width: 99%;
+}
+
+#who_title {
+        background-color: #00a;
+        color: #fff;
+        font-weight: bold;
+}

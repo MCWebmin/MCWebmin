@@ -1,0 +1,80 @@
+2011-01-17 23:10:32 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:10:32 [INFO] Loading properties
+2011-01-17 23:10:32 [WARNING] server.properties does not exist
+2011-01-17 23:10:32 [INFO] Generating new properties file
+2011-01-17 23:10:32 [INFO] Starting Minecraft server on *:25565
+2011-01-17 23:10:32 [WARNING] Failed to load ban list: java.io.FileNotFoundException: banned-players.txt (No such file or directory)
+2011-01-17 23:10:32 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: banned-ips.txt (No such file or directory)
+2011-01-17 23:10:32 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: ops.txt (No such file or directory)
+2011-01-17 23:10:32 [INFO] Preparing level "world"
+2011-01-17 23:10:32 [INFO] Preparing start region
+2011-01-17 23:10:34 [INFO] Preparing spawn area: 4%
+2011-01-17 23:10:35 [INFO] Preparing spawn area: 8%
+2011-01-17 23:10:36 [INFO] Preparing spawn area: 12%
+2011-01-17 23:10:37 [INFO] Preparing spawn area: 20%
+2011-01-17 23:10:38 [INFO] Preparing spawn area: 32%
+2011-01-17 23:10:39 [INFO] Preparing spawn area: 40%
+2011-01-17 23:10:40 [INFO] Preparing spawn area: 44%
+2011-01-17 23:10:41 [INFO] Preparing spawn area: 52%
+2011-01-17 23:10:42 [INFO] Preparing spawn area: 61%
+2011-01-17 23:10:43 [INFO] Preparing spawn area: 65%
+2011-01-17 23:10:44 [INFO] Preparing spawn area: 73%
+2011-01-17 23:10:45 [INFO] Preparing spawn area: 77%
+2011-01-17 23:10:46 [INFO] Preparing spawn area: 85%
+2011-01-17 23:10:47 [INFO] Preparing spawn area: 89%
+2011-01-17 23:10:48 [INFO] Preparing spawn area: 93%
+2011-01-17 23:10:49 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:10:57 [INFO] To run the server without a gui, start it like this:
+2011-01-17 23:10:57 [INFO]    java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+2011-01-17 23:10:57 [INFO] Console commands:
+2011-01-17 23:10:57 [INFO]    help  or  ?               shows this message
+2011-01-17 23:10:57 [INFO]    kick <player>             removes a player from the server
+2011-01-17 23:10:57 [INFO]    ban <player>              bans a player from the server
+2011-01-17 23:10:57 [INFO]    pardon <player>           pardons a banned player so that they can connect again
+2011-01-17 23:10:57 [INFO]    ban-ip <ip>               bans an IP address from the server
+2011-01-17 23:10:57 [INFO]    pardon-ip <ip>            pardons a banned IP address so that they can connect again
+2011-01-17 23:10:57 [INFO]    op <player>               turns a player into an op
+2011-01-17 23:10:57 [INFO]    deop <player>             removes op status from a player
+2011-01-17 23:10:57 [INFO]    tp <player1> <player2>    moves one player to the same location as another player
+2011-01-17 23:10:57 [INFO]    give <player> <id> [num]  gives a player a resource
+2011-01-17 23:10:57 [INFO]    tell <player> <message>   sends a private message to a player
+2011-01-17 23:10:57 [INFO]    stop                      gracefully stops the server
+2011-01-17 23:10:57 [INFO]    save-all                  forces a server-wide level save
+2011-01-17 23:10:57 [INFO]    save-off                  disables terrain saving (useful for backup scripts)
+2011-01-17 23:10:57 [INFO]    save-on                   re-enables terrain saving
+2011-01-17 23:10:57 [INFO]    list                      lists all currently connected players
+2011-01-17 23:10:57 [INFO]    say <message>             broadcasts a message to all players
+2011-01-17 23:11:42 [INFO] To run the server without a gui, start it like this:
+2011-01-17 23:11:42 [INFO]    java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+2011-01-17 23:11:42 [INFO] Console commands:
+2011-01-17 23:11:42 [INFO]    help  or  ?               shows this message
+2011-01-17 23:11:42 [INFO]    kick <player>             removes a player from the server
+2011-01-17 23:11:42 [INFO]    ban <player>              bans a player from the server
+2011-01-17 23:11:42 [INFO]    pardon <player>           pardons a banned player so that they can connect again
+2011-01-17 23:11:42 [INFO]    ban-ip <ip>               bans an IP address from the server
+2011-01-17 23:11:42 [INFO]    pardon-ip <ip>            pardons a banned IP address so that they can connect again
+2011-01-17 23:11:42 [INFO]    op <player>               turns a player into an op
+2011-01-17 23:11:42 [INFO]    deop <player>             removes op status from a player
+2011-01-17 23:11:42 [INFO]    tp <player1> <player2>    moves one player to the same location as another player
+2011-01-17 23:11:42 [INFO]    give <player> <id> [num]  gives a player a resource
+2011-01-17 23:11:42 [INFO]    tell <player> <message>   sends a private message to a player
+2011-01-17 23:11:42 [INFO]    stop                      gracefully stops the server
+2011-01-17 23:11:42 [INFO]    save-all                  forces a server-wide level save
+2011-01-17 23:11:42 [INFO]    save-off                  disables terrain saving (useful for backup scripts)
+2011-01-17 23:11:42 [INFO]    save-on                   re-enables terrain saving
+2011-01-17 23:11:42 [INFO]    list                      lists all currently connected players
+2011-01-17 23:11:42 [INFO]    say <message>             broadcasts a message to all players
+2011-01-17 23:11:59 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:11:59 [INFO] Loading properties
+2011-01-17 23:11:59 [INFO] Starting Minecraft server on *:25565
+2011-01-17 23:11:59 [INFO] Preparing level "world"
+2011-01-17 23:11:59 [INFO] Preparing start region
+2011-01-17 23:12:01 [INFO] Preparing spawn area: 12%
+2011-01-17 23:12:02 [INFO] Preparing spawn area: 57%
+2011-01-17 23:12:03 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:12:04 [INFO] Unknown console command. Type "help" for help.
+2011-01-17 23:12:06 [INFO] Unknown console command. Type "help" for help.
+2011-01-17 23:12:09 [INFO] Unknown console command. Type "help" for help.
+2011-01-17 23:12:16 [INFO] Unknown console command. Type "help" for help.
+2011-01-17 23:12:21 [INFO] Unknown console command. Type "help" for help.
+2011-01-17 23:12:33 [INFO] Unknown console command. Type "help" for help.
