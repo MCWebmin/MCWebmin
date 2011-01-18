@@ -382,3 +382,4 @@ java.lang.NullPointerException
 2011-01-18 17:51:05 [INFO] Preparing spawn area: 93%
 2011-01-18 17:51:06 [INFO] Preparing spawn area: 97%
 2011-01-18 17:51:06 [INFO] Done! For help, type "help" or "?"
+2011-01-18 18:00:19 [WARNING] Can't keep up! Did the system time change, or is the server overloaded?
