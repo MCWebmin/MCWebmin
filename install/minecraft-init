@@ -15,7 +15,7 @@
   ### END INIT INFO
 
 #Settings
-SERVICE='SimpleServer.jar'
+SERVICE='minecraft_server.jar'
 USERNAME="mcwebmin"
 MCPATH='/usr/local/mcwebmin/minecraft'  #No last backslash!
 BACKUPPATH='/usr/local/mcwebmin/backup' #No last backslash!
