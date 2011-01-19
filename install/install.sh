@@ -100,7 +100,7 @@ echo "Done"
 if [ $WEBSERVER = "lighttpd" ]; then
 	wget -O lighttpd.conf $DOWNLOAD_LOCATION/MCWebmin/lighttpd.conf
 	echo "Adding $USER to users"
-	useradd $USER -M -d $INSTALL_DIR
+	useradd -d $INSTALL_DIR $USER
 	chown -R $USER:$USER $INSTALL_DIR
 	echo "Generating certificate"
 	echo "#############################################"
@@ -144,7 +144,7 @@ elif [ $WEBSERVER = "apache" ]; then
 			a2ensite $DOMAIN			
 
 			#Add selected user to the system
-			useradd $USER -M -d $INSTALL_DIR
+			useradd -d $INSTALL_DIR $USER
 			chown -R $USER:$USER $INSTALL_DIR
 			
 			break
@@ -194,6 +194,7 @@ if [ "$DOWNLOADMINECRAFT" = "Y" ] || [ "$DOWNLOADMINECRAFT" = "" ] || [ "$DOWNLO
 
 	if [ -f $INSTALL_DIR/minecraft/minecraft_server.jar.update ]; then
 		mv $INSTALL_DIR/minecraft/minecraft_server.jar.update $INSTALL_DIR/minecraft/minecraft_server.jar
+		chown $USER\: $INSTALL_DIR/minecraft/minecraft_server.jar
 		echo "Minecraft successfully updated."
 	else
 		echo "Minecraft update could not be downloaded."
