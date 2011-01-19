@@ -9,26 +9,41 @@ class Connection
 	
 	public function Connection($host, $port, $password)
 	{
-		$this->socket = fsockopen($host,$port,$this->errno,$this->errstr,10);
+		$this->socket = pfsockopen($host,$port,$this->errno,$this->errstr,10);
 		if ($this->socket === false)
 		{
-			return "HOST_DOWN";
+			fclose($this->socket);
+			$this->status = "HOST_DOWN";
 		} else
 		{
-			if (fwrite($this->socket,$password))
+			// server wants password now?
+			$response = fgets($this->socket,1024);
+			if (strpos($response,"enter the password"))
 			{
-				$response = fgets($this->socket,1024);
-				echo $response;
-				if (strpos($response,"enter the password"))
-				{
-					// server wants password, give it to it
-				} else {
-					$this->status = "BAD_SERV_RESP";
-				}
+				$this->auth($password);
 			} else {
 				fclose($this->socket);
-				return "SERV_HATES_US";
+				$this->status = "BAD_SERV_RESP";
 			}
+		}
+	}
+	
+	public function auth($password)
+	{
+		if (fwrite($this->socket,$password))
+		{
+			$response = fgets($this->socket,1024);
+			if (substr($response,0,1) == "-")
+			{
+				$this->status = "BAD_PASSWORD";
+			} else
+			{
+				$this->status = "READY";
+			}
+		} else 
+		{
+			fclose($this->socket);
+			$this->status = "CONNECTION_WRITE_ERROR";
 		}
 	}
 	
