@@ -1,0 +1,49 @@
+#!/bin/bash
+# Syntax: mod {action} {value}
+
+DIRECTORY="/usr/local/mcwebmin/minecraft"
+RCLIST="kw.class mm.class rm.class rn.class rt.class v.class"
+cd $DIRECTORY
+
+if [ "$1" = "add" ]; then
+	if [ "$2" = "runecraft" ]; then
+		#Download runecraft
+		wget http://llama.cerberusstudios.net/runecraft_latest.zip
+
+		# Unzips runecraft to a directory
+		unzip runecraft_latest.zip -d runecraft/
+
+		#Stop server
+		/etc/init.d/minecraft stop
+
+		# Adds all of the files to the minecraft jar
+		cd runecraft/
+		jar uvf ../minecraft_server.jar ./*
+		cd ..
+
+		#Start server
+		/etc/init.d/minecraft start
+
+		# Cleans up
+		rm -r runecraft/ runecraft_latest.zip
+
+		echo "Finished"
+	fi
+
+elif [ "$1" = "remove" ]; then
+	if [ "$2" = "runecraft" ]; then
+		#Stop server
+		/etc/init.d/minecraft stop
+
+		#Remove files from .jar
+		zip -d minecraft_server.jar $RCLIST
+		echo "Runecraft removed!"
+
+		#Start server
+		/etc/init.d/minecraft start
+	fi
+
+else
+	echo "Syntax: mod {action} {mod}"
+fi
+
