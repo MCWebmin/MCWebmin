@@ -18,7 +18,7 @@ if [ "$1" = "add" ]; then
 
 		# Adds all of the files to the minecraft jar
 		cd runecraft/
-		jar uvf ../minecraft_server.jar ./*
+		zip uvf ../minecraft_server.jar ./*
 		cd ..
 
 		#Start server

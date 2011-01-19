@@ -1,4 +1,5 @@
 #!/bin/bash
+#Origin: http://s3.ndure.eu/MCWebmin/install.sh
 echo "##########################################"
 echo "#   Welcome to the MCWebmin installer!   #"	
 echo "##########################################"
@@ -7,7 +8,7 @@ echo "##########################################"
 echo "#     This will install the latest       #"
 echo "#    version of the MCWebmin software    #"
 echo "##########################################"
-echo "#########|Installer version 0.2|##########"
+echo "#########|Installer version 0.3|##########"
 echo "##########################################"
 echo
 echo
@@ -18,21 +19,32 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-echo "Would you like to install SUN Java? [Y/n]"
-read INSTALLJAVA
-
+#Uncomenting this until fixed
+echo "Would you like to install OpenJDK (Java)? [Y/n]"
+	read INSTALLJAVA
 
 #Instalation settings (do not change, if you dont know what you are doing)
-DEPENDENCIES="zip unzip fastjar"
+DEPENDENCIES="zip unzip"
 DOWNLOAD_LOCATION="http://s3.ndure.eu"
+SERVER_DOWNLOAD_LOCATION="http://s3.ndure.eu/MCWebmin/minecraft_server.jar"
 USER="mcwebmin"
 INSTALL_DIR="/usr/local/mcwebmin"
 
 #Install java or not
 if [ "$INSTALLJAVA" = "Y" ] || [ "$INSTALLJAVA" = "" ] || [ "$INSTALLJAVA" = "y" ]; then
-	DEPENDENCIES="$DEPENDENCIES sun-java6-jre"
+	DEPENDENCIES="$DEPENDENCIES openjdk-6-jre-headless"
 	INSTALLJAVA=true
 fi
+
+echo "Would you like to update the system (recomended) [Y/n]?"
+	read UPDATESYSTEM
+
+echo "Would you like minecraft to start when the computer starts? [Y/n]"
+	read AUTOSTART
+
+echo "Would you like to download the newest version of minecraft_server.jar? [Y/n]"
+	read DOWNLOADMINECRAFT
+
 
 #Ask for web server
 echo "What web server would you like to install/configure?"
@@ -57,20 +69,14 @@ select opt in $OPTIONS; do
 	fi
 done
 
-echo "Would you like to update the system (recomended) [Y/n]?"
-	read UPDATESYSTEM
 #Update the system if user wants to do so
 if [ "$UPDATESYSTEM" = "Y" ] || [ "$UPDATESYSTEM" = "" ] || [ "$UPDATESYSTEM" = "y" ]; then
 	apt-get update
 	apt-get -y upgrade
 fi
 
-
 #Install dependent paskage files
-
-echo "Dependencies to be installed: $DEPENDENCIES"
-read 
-echo "Installing dependencies..."	
+echo "Installing dependencies..."
 	apt-get -y install $DEPENDENCIES
 
 #Download MCWebmin
@@ -88,7 +94,6 @@ echo "Done"
 #Move it to the right directory
 echo "Moving MCWebmin to $INSTALL_DIR"
 	mv MCWebmin/ $INSTALL_DIR
-	chown -r mcwebmin\: /usr/local/mcwebmin/
 echo "Done"
 
 #If Lighttpd selected for install, configure it here.
@@ -96,8 +101,11 @@ if [ $WEBSERVER = "lighttpd" ]; then
 	wget -O lighttpd.conf $DOWNLOAD_LOCATION/MCWebmin/lighttpd.conf
 	echo "Adding $USER to users"
 	useradd $USER -M -d $INSTALL_DIR
+	chown -R $USER:$USER $INSTALL_DIR
 	echo "Generating certificate"
-	echo "Press enter on all cases, defaults are fine"
+	echo "#############################################"
+	echo "#Press enter on all cases, defaults are fine#"
+	echo "#############################################"
 		openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes
 			chown mcwebmin:mcwebmin server.pem
 			chmod 0600 server.pem
@@ -107,6 +115,9 @@ if [ $WEBSERVER = "lighttpd" ]; then
 		mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.bak
 		mv lighttpd.conf /etc/lighttpd/lighttpd.conf
 	echo "Done"
+	#Reload configuration
+	/etc/init.d/lighttpd reload
+
 #If Apache2 selected, configure it here.
 elif [ $WEBSERVER = "apache" ]; then
 	echo "Do you want to configure apache to run minecraft as a VirtualHost (recommended, e.g. domain/subdomain: minecraft.example.net) or an Alias (e.g. example.com/minecraft)"
@@ -133,9 +144,9 @@ elif [ $WEBSERVER = "apache" ]; then
 			a2ensite $DOMAIN			
 
 			#Add selected user to the system
-			echo "Adding $USER to users"
 			useradd $USER -M -d $INSTALL_DIR
-
+			chown -R $USER:$USER $INSTALL_DIR
+			
 			break
 		elif [ "$opt" = "Alias" ]; then
 			wget -O apache.alias $DOWNLOAD_LOCATION/MCWebmin/apache.alias
@@ -148,7 +159,8 @@ elif [ $WEBSERVER = "apache" ]; then
 			cat apache.alias >> minecraft.conf
 			rm apache.alias
 			
-			echo "WARNING: MCWebmin is not designed to run under an Alias redirect. Altough this should not cause problems, we recommend using the VirtualHost option! If you"
+			echo "WARNING: MCWebmin is not designed to run under an Alias redirect."
+			echo "Altough this should not cause problems, we recommend using the VirtualHost option!"
 
 			#Add selected user to the system
 			USER="www-data"
@@ -159,7 +171,7 @@ elif [ $WEBSERVER = "apache" ]; then
 		fi
 	done
 	#Restart Apache2
-	/etc/init.d/apache2 restart
+	/etc/init.d/apache2 reload
 fi
 
 #init.d configuration
@@ -171,20 +183,30 @@ echo "Moving the script to /etc/init.d"
 	chmod +x /etc/init.d/minecraft
 echo "Done"
 
-
-echo "Would you like minecraft to start when the computer starts? [Y/n]"
-	read AUTOSTART
-
+#Add init.d script to startup, if requested by user
 if [ "$AUTOSTART" = "Y" ] || [ "$UAUTOSTART" = "" ] || [ "$AUTOSTART" = "y" ]; then
 	update-rc.d minecraft defaults
 fi
 
+#Update minecraft if user wanted to
+if [ "$DOWNLOADMINECRAFT" = "Y" ] || [ "$DOWNLOADMINECRAFT" = "" ] || [ "$DOWNLOADMINECRAFT" = "y" ]; then
+	wget -O $INSTALL_DIR/minecraft/minecraft_server.jar.update $SERVER_DOWNLOAD_LOCATION
+
+	if [ -f $INSTALL_DIR/minecraft/minecraft_server.jar.update ]; then
+		mv $INSTALL_DIR/minecraft/minecraft_server.jar.update $INSTALL_DIR/minecraft/minecraft_server.jar
+		echo "Minecraft successfully updated."
+	else
+		echo "Minecraft update could not be downloaded."
+	fi
+fi
+
 
 #Last minute adjustments
+/etc/init.d/minecraft start
 
-
-
-
+echo
+echo
+echo
 echo "Instalation completed, enjoy your new MCWebmin supported minecraft server!"
 
 

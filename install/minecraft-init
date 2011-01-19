@@ -36,7 +36,7 @@ mc_start() {
   else
     echo "$SERVICE was not running... starting."
     cd $MCPATH
-    as_user "cd $MCPATH && screen -dmS minecraft java -Xmx256m -Xms32m -jar $SERVICE"
+    as_user "cd $MCPATH && screen -dmS minecraft java -Xmx1024m -Xms1024m -jar $SERVICE nogui"
     sleep 7
     if ps ax | grep -v grep | grep -v -i SCREEN | grep $SERVICE > /dev/null
     then
