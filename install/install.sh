@@ -27,7 +27,7 @@ echo "Are you running Debian based Linux with apt (Debian or Ubuntu) or RHEL bas
 echo "Would you like to install OpenJDK (Java)? [Y/n]"
 	read INSTALLJAVA
 
-#Instalation settings (do not change, if you dont know what you are doing)
+#Installation settings (do not change, unless you know what you are doing)
 DEPENDENCIES="zip unzip"
 DOWNLOAD_LOCATION="http://s3.ndure.eu"
 SERVER_DOWNLOAD_LOCATION="http://s3.ndure.eu/MCWebmin/minecraft_server.jar"
@@ -36,15 +36,22 @@ INSTALL_DIR="/usr/local/mcwebmin"
 
 #Install java or not
 if [ "$INSTALLJAVA" = "Y" ] || [ "$INSTALLJAVA" = "" ] || [ "$INSTALLJAVA" = "y" ]; then
-	DEPENDENCIES="$DEPENDENCIES openjdk-6-jre-headless"
-	INSTALLJAVA=true
+	if [ "$DISTRO" = "debian" ]; then
+		DEPENDENCIES="$DEPENDENCIES openjdk-6-jre-headless"
+		INSTALLJAVA=true
+	elif [ "$DISTRO" = "rhel" ]; then
+		DEPENDENCIES="$DEPENDENCIES java-1.6.0-openjdk"
+	fi
 fi
 
 echo "Would you like to update the system (recommended) [Y/n]?"
 	read UPDATESYSTEM
 
-echo "Would you like minecraft to start when the computer starts? [Y/n]"
-	read AUTOSTART
+echo "Would you like Minecraft to start when the computer starts? [Y/n]"
+	read AUTOSTARTMC
+
+echo "Would you like MCWebmin to start when the computer starts? [Y/n]"
+	read AUTOSTARTWEB
 
 echo "Would you like to download the newest version of minecraft_server.jar? [Y/n]"
 	read DOWNLOADMINECRAFT
@@ -56,13 +63,24 @@ echo "What web server would you like to install/configure?"
 OPTIONS="Apache2 Lighttpd[default] None"
 select opt in $OPTIONS; do
 	if [ "$opt" = "Apache2" ]; then
-		DEPENDENCIES="$DEPENDENCIES apache2 php5 apache2-mpm-itk"
-		WEBSERVER="apache"
-		break
+		if [ "$DISTRO" = "debian" ]; then
+			DEPENDENCIES="$DEPENDENCIES apache2 php5 apache2-mpm-itk"
+			WEBSERVER="apache"
+		elif [ "$DISTRO" = "debian" ]; then
+			DEPENDENCIES="$DEPENDENCIES httpd php php-cli"
+			WEBSERVER="apache"
+		fi
+			break
 	elif [ "$opt" = "Lighttpd[default]" ]; then
-		DEPENDENCIES="$DEPENDENCIES lighttpd"
-		WEBSERVER="lighttpd"
-		break
+		if [ "$DISTRO" = "debian" ]; then
+			DEPENDENCIES="$DEPENDENCIES lighttpd php5 php5-cli"
+			WEBSERVER="lighttpd"
+			break
+		elif [ "$DISTRO" = "rhel" ]; then
+			DEPENDENCIES="$DEPENDENCIES lighttpd php php-cli"
+			WEBSERVER="lighttpd"	
+		fi
+		
 	elif [ "$opt" = "None" ]; then
 		echo "No webserver or configuration files will be installed!"
 		break
@@ -75,13 +93,22 @@ done
 
 #Update the system if user wants to do so
 if [ "$UPDATESYSTEM" = "Y" ] || [ "$UPDATESYSTEM" = "" ] || [ "$UPDATESYSTEM" = "y" ]; then
-	apt-get update
-	apt-get -y upgrade
+	if [ "$DISTRO" = "debian" ]; then
+		apt-get update
+		apt-get -y upgrade
+	elif [ "$DISTRO" = "rhel" ]; then
+		yum update
+		yum upgrade
+	fi
 fi
 
 #Install dependent paskage files
 echo "Installing dependencies..."
+if [ $DISTRO = "debian" ]; then
 	apt-get -y install $DEPENDENCIES
+elif [ $DISTRO = "rhel" ]; then
+	yum -y install $DEPENDENCIES
+done
 
 #Download MCWebmin
 echo "Downloading MCWebmin package"
@@ -191,7 +218,7 @@ echo "Moving the script to /etc/init.d"
 echo "Done"
 
 #Add init.d script to startup, if requested by user
-if [ "$AUTOSTART" = "Y" ] || [ "$UAUTOSTART" = "" ] || [ "$AUTOSTART" = "y" ]; then
+if [ "$AUTOSTARTMC" = "Y" ] || [ "$AUTOSTART" = "" ] || [ "$AUTOSTARTMC" = "y" ]; then
 	update-rc.d minecraft defaults
 fi
 
