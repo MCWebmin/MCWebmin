@@ -8,7 +8,7 @@ echo "##########################################"
 echo "#     This will install the latest       #"
 echo "#    version of the MCWebmin software    #"
 echo "##########################################"
-echo "#########|Installer version 0.5|##########"
+echo "#########|Installer version 0.5.1|########"
 echo "##########################################"
 echo
 echo
@@ -19,27 +19,31 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-#Ask for Linux Distro?
-echo "Are you running Debian based Linux with apt (Debian or Ubuntu) or RHEL based Linux with yum (Red Hat, CentOS, Fedora) Linux? [debian/rhel]"
-	read DISTRO
 
-#Uncomenting this until fixed
+#Ask for Linux Distro?
+echo "Are you running Debian based Linux with apt (Debian or Ubuntu) or RHEL based Linux with yum (Red Hat, CentOS, Fedora)?"
+	select DISTRO in Debian RHEL; do
+		echo "Selected $DISTRO"
+		break
+	done
+
+#Check if user wants to install Java
 echo "Would you like to install OpenJDK (Java)? [Y/n]"
 	read INSTALLJAVA
 
 #Installation settings (do not change, unless you know what you are doing)
-DEPENDENCIES="zip unzip"
-DOWNLOAD_LOCATION="http://s3.ndure.eu"
+DEPENDENCIES="zip unzip screen wget"
+DOWNLOAD_LOCATION="http://s3.ndure.eu" #No last /
 SERVER_DOWNLOAD_LOCATION="http://s3.ndure.eu/MCWebmin/minecraft_server.jar"
 USER="mcwebmin"
-INSTALL_DIR="/usr/local/mcwebmin"
+INSTALL_DIR="/usr/local/mcwebmin" #No last /
 
 #Install java or not
 if [ "$INSTALLJAVA" = "Y" ] || [ "$INSTALLJAVA" = "" ] || [ "$INSTALLJAVA" = "y" ]; then
-	if [ "$DISTRO" = "debian" ]; then
+	if [ "$DISTRO" = "Debian" ]; then
 		DEPENDENCIES="$DEPENDENCIES openjdk-6-jre-headless"
 		INSTALLJAVA=true
-	elif [ "$DISTRO" = "rhel" ]; then
+	elif [ "$DISTRO" = "RHEL" ]; then
 		DEPENDENCIES="$DEPENDENCIES java-1.6.0-openjdk"
 	fi
 fi
@@ -63,20 +67,20 @@ echo "What web server would you like to install/configure?"
 OPTIONS="Apache2 Lighttpd[default] None"
 select opt in $OPTIONS; do
 	if [ "$opt" = "Apache2" ]; then
-		if [ "$DISTRO" = "debian" ]; then
+		if [ "$DISTRO" = "Debian" ]; then
 			DEPENDENCIES="$DEPENDENCIES apache2 php5 apache2-mpm-itk"
 			WEBSERVER="apache"
-		elif [ "$DISTRO" = "rhel" ]; then
+		elif [ "$DISTRO" = "RHEL" ]; then
 			DEPENDENCIES="$DEPENDENCIES httpd php php-cli"
 			WEBSERVER="apache"
 		fi
 			break
 	elif [ "$opt" = "Lighttpd[default]" ] || [ "$opt" = "" ]; then
-		if [ "$DISTRO" = "debian" ]; then
-			DEPENDENCIES="$DEPENDENCIES lighttpd php5 php5-cli"
+		if [ "$DISTRO" = "Debian" ]; then
+			DEPENDENCIES="$DEPENDENCIES lighttpd"
 			WEBSERVER="lighttpd"
 			break
-		elif [ "$DISTRO" = "rhel" ]; then
+		elif [ "$DISTRO" = "RHEL" ]; then
 			DEPENDENCIES="$DEPENDENCIES lighttpd php php-cli"
 			WEBSERVER="lighttpd"	
 		fi
@@ -87,12 +91,16 @@ select opt in $OPTIONS; do
 	fi
 done
 
+echo "Server: $WEBSERVER"
+echo "Dependencies: $DEPENDENCIES"
+read
+
 #Update the system if user wants to do so
 if [ "$UPDATESYSTEM" = "Y" ] || [ "$UPDATESYSTEM" = "" ] || [ "$UPDATESYSTEM" = "y" ]; then
-	if [ "$DISTRO" = "debian" ]; then
+	if [ $DISTRO = "Debian" ]; then
 		apt-get update
 		apt-get -y upgrade
-	elif [ "$DISTRO" = "rhel" ]; then
+	elif [ $DISTRO = "RHEL" ]; then
 		yum update
 		yum upgrade
 	fi
@@ -100,9 +108,9 @@ fi
 
 #Install dependent paskage files
 echo "Installing dependencies..."
-if [ $DISTRO = "debian" ]; then
+if [ $DISTRO = "Debian" ]; then
 	apt-get -y install $DEPENDENCIES
-elif [ $DISTRO = "rhel" ]; then
+elif [ $DISTRO = "RHEL" ]; then
 	yum -y install $DEPENDENCIES
 fi
 
@@ -150,14 +158,19 @@ if [ $WEBSERVER = "lighttpd" ]; then
 
 #If Apache2 selected, configure it here.
 elif [ $WEBSERVER = "apache" ]; then
-	echo "Do you want to configure apache to run minecraft as a VirtualHost (recommended, e.g. domain/subdomain: minecraft.example.net) or an Alias (e.g. example.com/minecraft)"
+	echo "Do you want to configure apache to run minecraft as a VirtualHost (recommended, e.g. domain/subdomain/port: minecraft.example.net) or an Alias (e.g. example.com/minecraft)"
 	OPTIONS="VirtualHost Alias"
 	select opt in $OPTIONS; do
 		if [ "$opt" = "VirtualHost" ]; then
 			wget -O apache.vhost $DOWNLOAD_LOCATION/MCWebmin/apache.vhost
-			echo "What domain do you want to use?"
+			echo "What domain do you want MCWebmin to answer to?"
 				read DOMAIN
-			echo "<VirtualHost *:80>" > $DOMAIN
+			echo "What port would you like to use? [80]"
+				read MCWPORT	
+			if [ "$MCWPORT" = "" ]; then
+				MCWPORT="80"
+			fi
+			echo "<VirtualHost *:$MCWPORT>" > $DOMAIN
 			echo "	ServerName $DOMAIN" >> $DOMAIN
 			echo "Your email address (optional):"
 				read EMAILADDR
@@ -240,11 +253,4 @@ echo
 echo
 echo "Instalation completed, enjoy your new MCWebmin supported minecraft server!"
 
-
-
-
-
-
-
-
-
+exit
