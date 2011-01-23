@@ -8,7 +8,7 @@ echo "##########################################"
 echo "#     This will install the latest       #"
 echo "#    version of the MCWebmin software    #"
 echo "##########################################"
-echo "#########|Installer version 0.3|##########"
+echo "#########|Installer version 0.5|##########"
 echo "##########################################"
 echo
 echo
@@ -66,12 +66,12 @@ select opt in $OPTIONS; do
 		if [ "$DISTRO" = "debian" ]; then
 			DEPENDENCIES="$DEPENDENCIES apache2 php5 apache2-mpm-itk"
 			WEBSERVER="apache"
-		elif [ "$DISTRO" = "debian" ]; then
+		elif [ "$DISTRO" = "rhel" ]; then
 			DEPENDENCIES="$DEPENDENCIES httpd php php-cli"
 			WEBSERVER="apache"
 		fi
 			break
-	elif [ "$opt" = "Lighttpd[default]" ]; then
+	elif [ "$opt" = "Lighttpd[default]" ] || [ "$opt" = "" ]; then
 		if [ "$DISTRO" = "debian" ]; then
 			DEPENDENCIES="$DEPENDENCIES lighttpd php5 php5-cli"
 			WEBSERVER="lighttpd"
@@ -83,10 +83,6 @@ select opt in $OPTIONS; do
 		
 	elif [ "$opt" = "None" ]; then
 		echo "No webserver or configuration files will be installed!"
-		break
-	elif [ "$opt" = "" ]; then
-		DEPENDENCIES="$DEPENDENCIES lighttpd"
-		WEBSERVER="lighttpd"
 		break
 	fi
 done
@@ -108,7 +104,7 @@ if [ $DISTRO = "debian" ]; then
 	apt-get -y install $DEPENDENCIES
 elif [ $DISTRO = "rhel" ]; then
 	yum -y install $DEPENDENCIES
-done
+fi
 
 #Download MCWebmin
 echo "Downloading MCWebmin package"
@@ -218,7 +214,7 @@ echo "Moving the script to /etc/init.d"
 echo "Done"
 
 #Add init.d script to startup, if requested by user
-if [ "$AUTOSTARTMC" = "Y" ] || [ "$AUTOSTART" = "" ] || [ "$AUTOSTARTMC" = "y" ]; then
+if [ "$AUTOSTARTMC" = "Y" ] || [ "$AUTOSTARTMC" = "" ] || [ "$AUTOSTARTMC" = "y" ]; then
 	update-rc.d minecraft defaults
 fi
 
