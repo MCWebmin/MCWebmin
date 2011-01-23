@@ -19,6 +19,10 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+#Ask for Linux Distro?
+echo "Are you running Debian based Linux with apt (Debian or Ubuntu) or RHEL based Linux with yum (Red Hat, CentOS, Fedora) Linux? [debian/rhel]"
+	read DISTRO
+
 #Uncomenting this until fixed
 echo "Would you like to install OpenJDK (Java)? [Y/n]"
 	read INSTALLJAVA
@@ -36,7 +40,7 @@ if [ "$INSTALLJAVA" = "Y" ] || [ "$INSTALLJAVA" = "" ] || [ "$INSTALLJAVA" = "y"
 	INSTALLJAVA=true
 fi
 
-echo "Would you like to update the system (recomended) [Y/n]?"
+echo "Would you like to update the system (recommended) [Y/n]?"
 	read UPDATESYSTEM
 
 echo "Would you like minecraft to start when the computer starts? [Y/n]"
@@ -114,6 +118,9 @@ if [ $WEBSERVER = "lighttpd" ]; then
 	echo "Copying Lighttpd configuration"
 		mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.bak
 		mv lighttpd.conf /etc/lighttpd/lighttpd.conf
+	echo "Changing Ownership of folders"
+		chown -R mcwebmin:mcwebmin /var/log/lighttpd/
+		chown -R mcwebmin:mcwebmin /var/run/lighttpd/
 	echo "Done"
 	#Reload configuration
 	/etc/init.d/lighttpd reload
