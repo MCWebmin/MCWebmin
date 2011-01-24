@@ -33,7 +33,7 @@ echo "Would you like to install OpenJDK (Java)? [Y/n]"
 	read INSTALLJAVA
 
 #Installation settings (do not change, unless you know what you are doing)
-DEPENDENCIES="zip unzip screen wget"
+DEPENDENCIES="zip unzip screen wget openssl"
 DOWNLOAD_LOCATION="http://s3.ndure.eu" #No last /
 SERVER_DOWNLOAD_LOCATION="http://s3.ndure.eu/MCWebmin/minecraft_server.jar"
 USER="mcwebmin"
@@ -69,7 +69,7 @@ OPTIONS="Apache2 Lighttpd[default] None"
 select opt in $OPTIONS; do
 	if [ "$opt" = "Apache2" ]; then
 		if [ "$DISTRO" = "Debian" ]; then
-			DEPENDENCIES="$DEPENDENCIES apache2 php5 apache2-mpm-itk"
+			DEPENDENCIES="$DEPENDENCIES apache2 php5 php5-cgi apache2-mpm-itk"
 			WEBSERVER="apache"
 		elif [ "$DISTRO" = "RHEL" ]; then
 			DEPENDENCIES="$DEPENDENCIES httpd php php-cli"
