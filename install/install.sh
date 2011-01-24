@@ -146,6 +146,9 @@ if [ $WEBSERVER = "lighttpd" ]; then
 	echo "Copying Lighttpd configuration"
 		mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.bak
 		mv lighttpd.conf /etc/lighttpd/lighttpd.conf
+	echo "Making Lighttpd Folders"
+		mkdir /var/run/lighttpd/
+		mkdir /var/log/lighttpd/
 	echo "Changing Ownership of folders"
 		chown -R $USER:$USER /var/log/lighttpd/
 		chown -R $USER:$USER /var/run/lighttpd/
