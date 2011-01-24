@@ -8,7 +8,7 @@ echo "##########################################"
 echo "#     This will install the latest       #"
 echo "#    version of the MCWebmin software    #"
 echo "##########################################"
-echo "#########|Installer version 0.5.1|########"
+echo "#########|Installer version 0.6|########"
 echo "##########################################"
 echo
 echo
@@ -21,6 +21,7 @@ fi
 
 
 #Ask for Linux Distro?
+#Need to make this automatic. Use "cat /etc/*-release" and then something else
 echo "Are you running Debian based Linux with apt (Debian or Ubuntu) or RHEL based Linux with yum (Red Hat, CentOS, Fedora)?"
 	select DISTRO in Debian RHEL; do
 		echo "Selected $DISTRO"
@@ -77,7 +78,7 @@ select opt in $OPTIONS; do
 			break
 	elif [ "$opt" = "Lighttpd[default]" ] || [ "$opt" = "" ]; then
 		if [ "$DISTRO" = "Debian" ]; then
-			DEPENDENCIES="$DEPENDENCIES lighttpd"
+			DEPENDENCIES="$DEPENDENCIES lighttpd php5-cgi"
 			WEBSERVER="lighttpd"
 			break
 		elif [ "$DISTRO" = "RHEL" ]; then
@@ -90,10 +91,6 @@ select opt in $OPTIONS; do
 		break
 	fi
 done
-
-echo "Server: $WEBSERVER"
-echo "Dependencies: $DEPENDENCIES"
-read
 
 #Update the system if user wants to do so
 if [ "$UPDATESYSTEM" = "Y" ] || [ "$UPDATESYSTEM" = "" ] || [ "$UPDATESYSTEM" = "y" ]; then
@@ -142,7 +139,7 @@ if [ $WEBSERVER = "lighttpd" ]; then
 	echo "#Press enter on all cases, defaults are fine#"
 	echo "#############################################"
 		openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes
-			chown mcwebmin:mcwebmin server.pem
+			chown $USER:$USER server.pem
 			chmod 0600 server.pem
 			mv server.pem $INSTALL_DIR/server.pem
 	echo "Done, certificate is valid for 1 year"
@@ -150,8 +147,8 @@ if [ $WEBSERVER = "lighttpd" ]; then
 		mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.bak
 		mv lighttpd.conf /etc/lighttpd/lighttpd.conf
 	echo "Changing Ownership of folders"
-		chown -R mcwebmin:mcwebmin /var/log/lighttpd/
-		chown -R mcwebmin:mcwebmin /var/run/lighttpd/
+		chown -R $USER:$USER /var/log/lighttpd/
+		chown -R $USER:$USER /var/run/lighttpd/
 	echo "Done"
 	#Reload configuration
 	/etc/init.d/lighttpd reload
