@@ -1,0 +1,385 @@
+2011-01-17 23:02:24 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:02:24 [INFO] Loading properties
+2011-01-17 23:02:24 [WARNING] server.properties does not exist
+2011-01-17 23:02:24 [INFO] Generating new properties file
+2011-01-17 23:02:24 [INFO] Starting Minecraft server on *:25565
+2011-01-17 23:02:24 [WARNING] **** FAILED TO BIND TO PORT!
+2011-01-17 23:02:24 [WARNING] The exception was: java.net.BindException: Address already in use
+2011-01-17 23:02:24 [WARNING] Perhaps a server is already running on that port?
+2011-01-17 23:02:49 [SEVERE] Unexpected exception
+java.lang.NullPointerException
+	at net.minecraft.server.MinecraftServer.a(SourceFile:485)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:346)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:242)
+	at cu.run(SourceFile:512)
+2011-01-17 23:03:35 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:03:35 [INFO] Loading properties
+2011-01-17 23:03:35 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:03:37 [WARNING] Failed to load ban list: java.io.FileNotFoundException: banned-players.txt (No such file or directory)
+2011-01-17 23:03:37 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: banned-ips.txt (No such file or directory)
+2011-01-17 23:03:37 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: ops.txt (No such file or directory)
+2011-01-17 23:03:37 [INFO] Preparing level "world"
+2011-01-17 23:03:37 [INFO] Preparing start region
+2011-01-17 23:03:43 [INFO] Preparing spawn area: 0%
+2011-01-17 23:03:44 [INFO] Preparing spawn area: 0%
+2011-01-17 23:03:46 [INFO] Preparing spawn area: 0%
+2011-01-17 23:03:47 [INFO] Preparing spawn area: 3%
+2011-01-17 23:03:48 [INFO] Preparing spawn area: 3%
+2011-01-17 23:03:50 [INFO] Preparing spawn area: 4%
+2011-01-17 23:03:52 [INFO] Preparing spawn area: 4%
+2011-01-17 23:03:53 [INFO] Preparing spawn area: 4%
+2011-01-17 23:03:54 [INFO] Preparing spawn area: 8%
+2011-01-17 23:03:56 [INFO] Preparing spawn area: 8%
+2011-01-17 23:03:58 [INFO] Preparing spawn area: 12%
+2011-01-17 23:03:59 [INFO] Preparing spawn area: 16%
+2011-01-17 23:04:00 [INFO] Preparing spawn area: 20%
+2011-01-17 23:04:01 [INFO] Preparing spawn area: 28%
+2011-01-17 23:04:02 [INFO] Preparing spawn area: 32%
+2011-01-17 23:04:03 [INFO] Preparing spawn area: 36%
+2011-01-17 23:04:04 [INFO] Preparing spawn area: 36%
+2011-01-17 23:04:05 [INFO] Preparing spawn area: 36%
+2011-01-17 23:04:21 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:04:21 [INFO] Loading properties
+2011-01-17 23:04:21 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:04:21 [INFO] Preparing level "world"
+2011-01-17 23:04:21 [INFO] Preparing start region
+2011-01-17 23:04:23 [INFO] Preparing spawn area: 3%
+2011-01-17 23:04:24 [INFO] Preparing spawn area: 8%
+2011-01-17 23:04:25 [INFO] Preparing spawn area: 16%
+2011-01-17 23:04:26 [INFO] Preparing spawn area: 20%
+2011-01-17 23:04:27 [INFO] Preparing spawn area: 24%
+2011-01-17 23:04:28 [INFO] Preparing spawn area: 28%
+2011-01-17 23:04:29 [INFO] Preparing spawn area: 36%
+2011-01-17 23:04:30 [INFO] Preparing spawn area: 40%
+2011-01-17 23:04:31 [INFO] Preparing spawn area: 48%
+2011-01-17 23:04:32 [INFO] Preparing spawn area: 53%
+2011-01-17 23:04:33 [INFO] Preparing spawn area: 61%
+2011-01-17 23:04:34 [INFO] Preparing spawn area: 65%
+2011-01-17 23:04:35 [INFO] Preparing spawn area: 69%
+2011-01-17 23:04:36 [INFO] Preparing spawn area: 77%
+2011-01-17 23:04:37 [INFO] Preparing spawn area: 81%
+2011-01-17 23:04:38 [INFO] Preparing spawn area: 85%
+2011-01-17 23:04:39 [INFO] Preparing spawn area: 89%
+2011-01-17 23:04:40 [INFO] Preparing spawn area: 93%
+2011-01-17 23:04:41 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:06:57 [INFO] CONSOLE: Stopping the server..
+2011-01-17 23:06:57 [INFO] Stopping server
+2011-01-17 23:06:57 [INFO] Saving chunks
+2011-01-17 23:07:01 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:07:01 [INFO] Loading properties
+2011-01-17 23:07:01 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:07:01 [INFO] Preparing level "world"
+2011-01-17 23:07:01 [INFO] Preparing start region
+2011-01-17 23:07:02 [INFO] Preparing spawn area: 16%
+2011-01-17 23:07:03 [INFO] Preparing spawn area: 28%
+2011-01-17 23:07:04 [INFO] Preparing spawn area: 48%
+2011-01-17 23:07:06 [INFO] Preparing spawn area: 77%
+2011-01-17 23:07:07 [INFO] Preparing spawn area: 93%
+2011-01-17 23:07:07 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:08:36 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:08:36 [INFO] Loading properties
+2011-01-17 23:08:36 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:08:36 [INFO] Preparing level "world"
+2011-01-17 23:08:36 [INFO] Preparing start region
+2011-01-17 23:08:37 [INFO] Preparing spawn area: 16%
+2011-01-17 23:08:38 [INFO] Preparing spawn area: 28%
+2011-01-17 23:08:39 [INFO] Preparing spawn area: 28%
+2011-01-17 23:08:40 [INFO] Preparing spawn area: 57%
+2011-01-17 23:08:41 [INFO] Preparing spawn area: 81%
+2011-01-17 23:08:42 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:08:55 [INFO] CONSOLE: Stopping the server..
+2011-01-17 23:08:55 [INFO] Stopping server
+2011-01-17 23:08:55 [INFO] Saving chunks
+2011-01-17 23:14:46 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:14:46 [INFO] Loading properties
+2011-01-17 23:14:46 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:14:46 [INFO] Preparing level "world"
+2011-01-17 23:14:46 [INFO] Preparing start region
+2011-01-17 23:14:47 [INFO] Preparing spawn area: 16%
+2011-01-17 23:14:48 [INFO] Preparing spawn area: 28%
+2011-01-17 23:14:49 [INFO] Preparing spawn area: 48%
+2011-01-17 23:14:50 [INFO] Preparing spawn area: 81%
+2011-01-17 23:14:51 [INFO] Preparing spawn area: 97%
+2011-01-17 23:14:51 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:18:38 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:18:38 [INFO] Loading properties
+2011-01-17 23:18:38 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:18:38 [INFO] Preparing level "world"
+2011-01-17 23:18:38 [INFO] Preparing start region
+2011-01-17 23:18:39 [INFO] Preparing spawn area: 12%
+2011-01-17 23:18:40 [INFO] Preparing spawn area: 24%
+2011-01-17 23:18:41 [INFO] Preparing spawn area: 44%
+2011-01-17 23:18:42 [INFO] Preparing spawn area: 73%
+2011-01-17 23:18:43 [INFO] Preparing spawn area: 93%
+2011-01-17 23:18:43 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:18:58 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:18:58 [INFO] Loading properties
+2011-01-17 23:18:58 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:18:58 [INFO] Preparing level "world"
+2011-01-17 23:18:58 [INFO] Preparing start region
+2011-01-17 23:18:59 [INFO] Preparing spawn area: 16%
+2011-01-17 23:19:00 [INFO] Preparing spawn area: 28%
+2011-01-17 23:19:01 [INFO] Preparing spawn area: 48%
+2011-01-17 23:19:02 [INFO] Preparing spawn area: 77%
+2011-01-17 23:19:03 [INFO] Preparing spawn area: 93%
+2011-01-17 23:19:03 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:19:54 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:19:54 [INFO] Loading properties
+2011-01-17 23:19:54 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:19:54 [INFO] Preparing level "world"
+2011-01-17 23:19:54 [INFO] Preparing start region
+2011-01-17 23:24:50 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:24:50 [INFO] Loading properties
+2011-01-17 23:24:50 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:24:50 [INFO] Preparing level "world"
+2011-01-17 23:24:50 [INFO] Preparing start region
+2011-01-17 23:24:51 [INFO] Preparing spawn area: 16%
+2011-01-17 23:24:52 [INFO] Preparing spawn area: 28%
+2011-01-17 23:24:53 [INFO] Preparing spawn area: 48%
+2011-01-17 23:24:54 [INFO] Preparing spawn area: 77%
+2011-01-17 23:24:55 [INFO] Preparing spawn area: 93%
+2011-01-17 23:24:56 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:24:57 [INFO] CONSOLE: Stopping the server..
+2011-01-17 23:24:57 [INFO] Stopping server
+2011-01-17 23:24:57 [INFO] Saving chunks
+2011-01-17 23:30:32 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:30:32 [INFO] Loading properties
+2011-01-17 23:30:32 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:30:32 [INFO] Preparing level "world"
+2011-01-17 23:30:32 [INFO] Preparing start region
+2011-01-17 23:30:33 [INFO] Preparing spawn area: 8%
+2011-01-17 23:30:34 [INFO] Preparing spawn area: 24%
+2011-01-17 23:30:35 [INFO] Preparing spawn area: 40%
+2011-01-17 23:30:36 [INFO] Preparing spawn area: 69%
+2011-01-17 23:30:37 [INFO] Preparing spawn area: 89%
+2011-01-17 23:30:37 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:32:10 [WARNING] Can't keep up! Did the system time change, or is the server overloaded?
+2011-01-17 23:38:21 [INFO] CONSOLE: Stopping the server..
+2011-01-17 23:38:21 [INFO] Stopping server
+2011-01-17 23:38:21 [INFO] Saving chunks
+2011-01-17 23:38:25 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:38:25 [INFO] Loading properties
+2011-01-17 23:38:25 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:38:26 [INFO] Preparing level "world"
+2011-01-17 23:38:26 [INFO] Preparing start region
+2011-01-17 23:38:27 [INFO] Preparing spawn area: 16%
+2011-01-17 23:38:28 [INFO] Preparing spawn area: 28%
+2011-01-17 23:38:29 [INFO] Preparing spawn area: 44%
+2011-01-17 23:38:30 [INFO] Preparing spawn area: 69%
+2011-01-17 23:38:31 [INFO] Preparing spawn area: 89%
+2011-01-17 23:38:31 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:48:43 [INFO] CONSOLE: Stopping the server..
+2011-01-17 23:48:43 [INFO] Stopping server
+2011-01-17 23:48:43 [INFO] Saving chunks
+2011-01-17 23:48:47 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-17 23:48:47 [INFO] Loading properties
+2011-01-17 23:48:47 [INFO] Starting Minecraft server on *:25666
+2011-01-17 23:48:47 [INFO] Preparing level "world"
+2011-01-17 23:48:47 [INFO] Preparing start region
+2011-01-17 23:48:49 [INFO] Preparing spawn area: 8%
+2011-01-17 23:48:50 [INFO] Preparing spawn area: 24%
+2011-01-17 23:48:51 [INFO] Preparing spawn area: 36%
+2011-01-17 23:48:52 [INFO] Preparing spawn area: 61%
+2011-01-17 23:48:53 [INFO] Preparing spawn area: 85%
+2011-01-17 23:48:54 [INFO] Preparing spawn area: 97%
+2011-01-17 23:48:54 [INFO] Done! For help, type "help" or "?"
+2011-01-17 23:49:13 [INFO] Connected players: 
+2011-01-17 23:49:32 [INFO] Unknown console command. Type "help" for help.
+2011-01-17 23:49:34 [INFO] CONSOLE: Stopping the server..
+2011-01-17 23:49:34 [INFO] Stopping server
+2011-01-17 23:49:34 [INFO] Saving chunks
+2011-01-18 17:25:51 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-18 17:25:51 [INFO] Loading properties
+2011-01-18 17:25:51 [INFO] Starting Minecraft server on *:25666
+2011-01-18 17:25:51 [INFO] Preparing level "world"
+2011-01-18 17:25:51 [INFO] Preparing start region
+2011-01-18 17:25:52 [INFO] Preparing spawn area: 8%
+2011-01-18 17:25:53 [INFO] Preparing spawn area: 20%
+2011-01-18 17:25:54 [INFO] Preparing spawn area: 28%
+2011-01-18 17:25:55 [INFO] Preparing spawn area: 36%
+2011-01-18 17:25:56 [INFO] Preparing spawn area: 44%
+2011-01-18 17:25:58 [INFO] Preparing spawn area: 60%
+2011-01-18 17:25:59 [INFO] Preparing spawn area: 69%
+2011-01-18 17:26:00 [INFO] Preparing spawn area: 81%
+2011-01-18 17:26:01 [INFO] Preparing spawn area: 89%
+2011-01-18 17:26:02 [INFO] Preparing spawn area: 97%
+2011-01-18 17:26:02 [INFO] Done! For help, type "help" or "?"
+2011-01-18 17:28:46 [INFO] Connected players: 
+2011-01-18 17:28:48 [INFO] Connected players: 
+2011-01-18 17:28:50 [INFO] Connected players: 
+2011-01-18 17:28:51 [INFO] Connected players: 
+2011-01-18 17:28:54 [INFO] Connected players: 
+2011-01-18 17:28:56 [INFO] Connected players: 
+2011-01-18 17:28:57 [INFO] Unknown console command. Type "help" for help.
+2011-01-18 17:28:59 [INFO] Connected players: 
+2011-01-18 17:29:01 [INFO] To run the server without a gui, start it like this:
+2011-01-18 17:29:01 [INFO]    java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+2011-01-18 17:29:01 [INFO] Console commands:
+2011-01-18 17:29:01 [INFO]    help  or  ?               shows this message
+2011-01-18 17:29:01 [INFO]    kick <player>             removes a player from the server
+2011-01-18 17:29:01 [INFO]    ban <player>              bans a player from the server
+2011-01-18 17:29:01 [INFO]    pardon <player>           pardons a banned player so that they can connect again
+2011-01-18 17:29:01 [INFO]    ban-ip <ip>               bans an IP address from the server
+2011-01-18 17:29:01 [INFO]    pardon-ip <ip>            pardons a banned IP address so that they can connect again
+2011-01-18 17:29:01 [INFO]    op <player>               turns a player into an op
+2011-01-18 17:29:01 [INFO]    deop <player>             removes op status from a player
+2011-01-18 17:29:01 [INFO]    tp <player1> <player2>    moves one player to the same location as another player
+2011-01-18 17:29:01 [INFO]    give <player> <id> [num]  gives a player a resource
+2011-01-18 17:29:01 [INFO]    tell <player> <message>   sends a private message to a player
+2011-01-18 17:29:01 [INFO]    stop                      gracefully stops the server
+2011-01-18 17:29:01 [INFO]    save-all                  forces a server-wide level save
+2011-01-18 17:29:01 [INFO]    save-off                  disables terrain saving (useful for backup scripts)
+2011-01-18 17:29:01 [INFO]    save-on                   re-enables terrain saving
+2011-01-18 17:29:01 [INFO]    list                      lists all currently connected players
+2011-01-18 17:29:01 [INFO]    say <message>             broadcasts a message to all players
+2011-01-18 17:29:02 [INFO] Connected players: 
+2011-01-18 17:29:04 [INFO] Connected players: 
+2011-01-18 17:29:06 [INFO] Connected players: 
+2011-01-18 17:29:08 [INFO] Connected players: 
+2011-01-18 17:29:10 [INFO] Connected players: 
+2011-01-18 17:29:12 [INFO] Connected players: 
+2011-01-18 17:29:14 [INFO] Connected players: 
+2011-01-18 17:29:16 [INFO] Connected players: 
+2011-01-18 17:29:18 [INFO] Connected players: 
+2011-01-18 17:29:19 [INFO] Connected players: 
+2011-01-18 17:29:22 [INFO] Connected players: 
+2011-01-18 17:29:24 [INFO] Connected players: 
+2011-01-18 17:29:26 [INFO] Connected players: 
+2011-01-18 17:29:28 [INFO] Connected players: 
+2011-01-18 17:29:30 [INFO] Connected players: 
+2011-01-18 17:29:32 [INFO] Connected players: 
+2011-01-18 17:29:34 [INFO] Connected players: 
+2011-01-18 17:29:36 [INFO] Connected players: 
+2011-01-18 17:29:38 [INFO] Connected players: 
+2011-01-18 17:29:40 [INFO] Connected players: 
+2011-01-18 17:29:42 [INFO] Connected players: 
+2011-01-18 17:29:44 [INFO] Connected players: 
+2011-01-18 17:29:46 [INFO] Connected players: 
+2011-01-18 17:29:48 [INFO] Connected players: 
+2011-01-18 17:29:50 [INFO] Connected players: 
+2011-01-18 17:29:52 [INFO] Connected players: 
+2011-01-18 17:29:55 [INFO] Connected players: 
+2011-01-18 17:29:57 [INFO] Connected players: 
+2011-01-18 17:29:59 [INFO] Connected players: 
+2011-01-18 17:30:01 [INFO] Connected players: 
+2011-01-18 17:30:03 [INFO] Connected players: 
+2011-01-18 17:30:05 [INFO] Connected players: 
+2011-01-18 17:30:07 [INFO] Connected players: 
+2011-01-18 17:30:09 [INFO] Connected players: 
+2011-01-18 17:30:11 [INFO] Connected players: 
+2011-01-18 17:30:13 [INFO] Connected players: 
+2011-01-18 17:30:15 [INFO] Connected players: 
+2011-01-18 17:30:17 [INFO] Connected players: 
+2011-01-18 17:30:19 [INFO] Connected players: 
+2011-01-18 17:30:21 [INFO] Connected players: 
+2011-01-18 17:30:23 [INFO] Connected players: 
+2011-01-18 17:30:25 [INFO] Connected players: 
+2011-01-18 17:30:27 [INFO] Connected players: 
+2011-01-18 17:30:29 [INFO] Connected players: 
+2011-01-18 17:30:32 [INFO] Connected players: 
+2011-01-18 17:30:34 [INFO] Connected players: 
+2011-01-18 17:30:36 [INFO] Connected players: 
+2011-01-18 17:30:38 [INFO] Connected players: 
+2011-01-18 17:30:40 [INFO] Connected players: 
+2011-01-18 17:30:42 [INFO] Connected players: 
+2011-01-18 17:30:44 [INFO] Connected players: 
+2011-01-18 17:30:46 [INFO] Connected players: 
+2011-01-18 17:30:48 [INFO] Connected players: 
+2011-01-18 17:30:50 [INFO] Connected players: 
+2011-01-18 17:30:52 [INFO] Connected players: 
+2011-01-18 17:30:54 [INFO] Connected players: 
+2011-01-18 17:30:56 [INFO] Connected players: 
+2011-01-18 17:30:58 [INFO] Connected players: 
+2011-01-18 17:31:00 [INFO] Connected players: 
+2011-01-18 17:31:02 [INFO] Connected players: 
+2011-01-18 17:31:04 [INFO] Connected players: 
+2011-01-18 17:31:06 [INFO] Connected players: 
+2011-01-18 17:31:08 [INFO] Connected players: 
+2011-01-18 17:31:10 [INFO] Connected players: 
+2011-01-18 17:31:13 [INFO] Connected players: 
+2011-01-18 17:31:15 [INFO] Connected players: 
+2011-01-18 17:31:17 [INFO] Connected players: 
+2011-01-18 17:31:19 [INFO] Connected players: 
+2011-01-18 17:31:21 [INFO] Connected players: 
+2011-01-18 17:31:23 [INFO] Connected players: 
+2011-01-18 17:31:25 [INFO] Connected players: 
+2011-01-18 17:31:27 [INFO] Connected players: 
+2011-01-18 17:31:29 [INFO] Connected players: 
+2011-01-18 17:31:31 [INFO] Connected players: 
+2011-01-18 17:31:33 [INFO] Connected players: 
+2011-01-18 17:31:35 [INFO] Connected players: 
+2011-01-18 17:31:37 [INFO] Connected players: 
+2011-01-18 17:31:39 [INFO] Connected players: 
+2011-01-18 17:31:41 [INFO] Connected players: 
+2011-01-18 17:31:43 [INFO] Connected players: 
+2011-01-18 17:31:45 [INFO] Connected players: 
+2011-01-18 17:31:47 [INFO] Connected players: 
+2011-01-18 17:31:49 [INFO] Connected players: 
+2011-01-18 17:31:51 [INFO] Connected players: 
+2011-01-18 17:31:54 [INFO] Connected players: 
+2011-01-18 17:31:56 [INFO] Connected players: 
+2011-01-18 17:31:58 [INFO] Connected players: 
+2011-01-18 17:32:00 [INFO] Connected players: 
+2011-01-18 17:32:02 [INFO] Connected players: 
+2011-01-18 17:32:04 [INFO] Connected players: 
+2011-01-18 17:32:06 [INFO] Connected players: 
+2011-01-18 17:32:08 [INFO] Connected players: 
+2011-01-18 17:32:10 [INFO] Connected players: 
+2011-01-18 17:32:12 [INFO] Connected players: 
+2011-01-18 17:32:14 [INFO] Connected players: 
+2011-01-18 17:32:16 [INFO] Connected players: 
+2011-01-18 17:32:18 [INFO] Connected players: 
+2011-01-18 17:32:20 [INFO] Connected players: 
+2011-01-18 17:32:22 [INFO] Connected players: 
+2011-01-18 17:32:24 [INFO] Connected players: 
+2011-01-18 17:32:26 [INFO] Connected players: 
+2011-01-18 17:32:28 [INFO] Connected players: 
+2011-01-18 17:32:30 [INFO] Connected players: 
+2011-01-18 17:32:32 [INFO] Connected players: 
+2011-01-18 17:32:35 [INFO] Connected players: 
+2011-01-18 17:32:37 [INFO] Connected players: 
+2011-01-18 17:32:39 [INFO] Connected players: 
+2011-01-18 17:32:41 [INFO] Connected players: 
+2011-01-18 17:32:43 [INFO] Connected players: 
+2011-01-18 17:32:45 [INFO] Connected players: 
+2011-01-18 17:32:47 [INFO] Connected players: 
+2011-01-18 17:32:49 [INFO] Connected players: 
+2011-01-18 17:32:51 [INFO] Connected players: 
+2011-01-18 17:32:53 [INFO] Connected players: 
+2011-01-18 17:32:55 [INFO] Connected players: 
+2011-01-18 17:32:57 [INFO] Connected players: 
+2011-01-18 17:32:59 [INFO] Connected players: 
+2011-01-18 17:33:01 [INFO] Connected players: 
+2011-01-18 17:33:03 [INFO] Connected players: 
+2011-01-18 17:33:05 [INFO] Connected players: 
+2011-01-18 17:33:07 [INFO] Connected players: 
+2011-01-18 17:33:09 [INFO] Connected players: 
+2011-01-18 17:33:11 [INFO] Connected players: 
+2011-01-18 17:33:13 [INFO] Connected players: 
+2011-01-18 17:33:16 [INFO] Connected players: 
+2011-01-18 17:33:18 [INFO] Connected players: 
+2011-01-18 17:33:20 [INFO] Connected players: 
+2011-01-18 17:33:22 [INFO] Connected players: 
+2011-01-18 17:33:24 [INFO] Connected players: 
+2011-01-18 17:33:26 [INFO] Connected players: 
+2011-01-18 17:33:28 [INFO] Connected players: 
+2011-01-18 17:33:30 [INFO] Connected players: 
+2011-01-18 17:33:32 [INFO] Connected players: 
+2011-01-18 17:33:34 [INFO] Connected players: 
+2011-01-18 17:33:36 [INFO] Connected players: 
+2011-01-18 17:33:38 [INFO] Connected players: 
+2011-01-18 17:33:40 [INFO] Connected players: 
+2011-01-18 17:45:12 [INFO] CONSOLE: Stopping the server..
+2011-01-18 17:50:59 [INFO] Starting minecraft server version Beta 1.2_01
+2011-01-18 17:50:59 [INFO] Loading properties
+2011-01-18 17:50:59 [INFO] Starting Minecraft server on *:25666
+2011-01-18 17:50:59 [INFO] Preparing level "world"
+2011-01-18 17:50:59 [INFO] Preparing start region
+2011-01-18 17:51:01 [INFO] Preparing spawn area: 16%
+2011-01-18 17:51:02 [INFO] Preparing spawn area: 28%
+2011-01-18 17:51:03 [INFO] Preparing spawn area: 48%
+2011-01-18 17:51:04 [INFO] Preparing spawn area: 77%
+2011-01-18 17:51:05 [INFO] Preparing spawn area: 93%
+2011-01-18 17:51:06 [INFO] Preparing spawn area: 97%
+2011-01-18 17:51:06 [INFO] Done! For help, type "help" or "?"
+2011-01-18 18:00:19 [WARNING] Can't keep up! Did the system time change, or is the server overloaded?
