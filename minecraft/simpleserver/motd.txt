@@ -1,2 +1,0 @@
-# This message is displayed when people login and via the !motd command
-
