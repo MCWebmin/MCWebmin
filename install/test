@@ -1,6 +1,0 @@
-#!/bin/bash
-#FIle input test
-
-. /etc/*release
-
-echo $DISTRIB_ID
