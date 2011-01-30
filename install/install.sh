@@ -8,7 +8,7 @@ echo "##########################################"
 echo "#     This will install the latest       #"
 echo "#    version of the MCWebmin software    #"
 echo "##########################################"
-echo "#########|Installer version 0.7.1|########"
+echo "#########|Installer version 0.7.2|########"
 echo "##########################################"
 echo
 echo
@@ -21,8 +21,8 @@ fi
 
 #Installation settings (do not change, unless you know what you are doing)
 DEPENDENCIES="zip unzip screen wget openssl python" #Will not get installed if already installed
-DOWNLOAD_LOCATION="http://s3.ndure.eu" #No last /
-SERVER_DOWNLOAD_LOCATION="http://s3.ndure.eu/MCWebmin/minecraft_server.jar"
+DOWNLOAD_LOCATION="http://cf.mcwebmin.com" #No last /
+SERVER_DOWNLOAD_LOCATION="http://www.minecraft.net/download/minecraft_server.jar"
 USER="mcwebmin"
 INSTALL_DIR="/usr/local/mcwebmin" #No last /
 #Import Distribution information file
@@ -74,6 +74,25 @@ echo "Would you like Minecraft to start when the computer starts? [Y/n]"
 
 echo "Would you like to download the newest version of minecraft_server.jar? [Y/n]"
 	read DOWNLOADMINECRAFT
+
+#Not finished yet
+echo "Would you like to install the basic configuration? [Y/n]"
+echo "Permissions Plugin"
+echo "Essentials Plugin"
+	read INSTALL_CONF_BASIC
+
+#Not finished yet
+echo "Would you like to install the magic pack? [Y/n]"
+echo "Spells Plugin"
+echo "Wand Plugin"
+	read INSTALL_CONF_MAGIC
+
+#Not finished yet
+echo "Would you like to install the anti-grief pack?"
+echo "Guardian Plugin"
+echo ""
+
+echo "Apart from installing the plugins, the script will also install a custom configuration for them, which you can later eddit."
 
 
 #Ask for web server
