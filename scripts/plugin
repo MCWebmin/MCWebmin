@@ -1,2 +1,98 @@
 #!/bin/bash
 #Plugin instalation tool
+
+#Get extension:  echo ${F##*.} - thanks to dualbus on #bash - freenode
+#Get file name: echo ${F##*/}
+#Get base:  echo ${F%*.}
+
+PLUGIN_DIR="/usr/local/mcwebmin/minecraft/plugins/"
+#Must be chowned to the MCW user.
+TMP_DIR="/usr/local/mcwebmin/tmp/plugininstall/"
+
+PLUGIN_SOURCE="$2"
+
+#MORE OR LESS FINISHED!
+install_local() {
+
+	mkdir $TMP_DIR
+	cd $TMP_DIR
+	#Move the archive to the temporary folder
+	mv $2 ./
+
+	#Get file name
+	PLUGIN_FILENAME=${2##*/}
+
+	#Get file extension
+	EXTENSION=${2##*.}
+	echo "Extension: $EXTENSION"
+
+	#Get the file path to the plugin. Nothing else can be in the /tmp/minecraft/ folder.
+	FILE_PATH="$TMP_DIR""$PLUGIN_FILENAME"
+
+	echo "File path: $FILE_PATH"
+
+	read
+
+	if [ "$EXTENSION" = "tar.gz" ] || [ "$EXTENSION" = "gz" ] || [ "$EXTENSION" = "tar" ]; then
+		tar -xf $FILE_PATH -C ./temp/
+		mv ./temp/* $PLUGIN_DIR
+	elif [ "$EXTENSION" = "zip" ]; then
+		unzip $FILE_PATH -d ./temp/
+		mv ./temp/* $PLUGIN_DIR
+	elif [ "$EXTENSION" = "jar" ]; then
+		mv $FILE_PATH $PLUGIN_DIR
+
+
+	else
+		echo "Unknown extension: $EXTENSION"
+		exit $?
+	fi
+
+	rm -r $TMP_DIR
+	exit 1
+}
+
+
+
+
+#NOT FINISHED YET!!!
+install_web() {
+	mkdir $TMP_DIR
+	cd $TMP_DIR
+
+
+	WEB_FILE_NAME=${2##*/}
+
+
+	wget $2
+	
+exit 1
+
+
+}
+
+
+#Check if arguments are there, launch appropriate code.
+if [ -n "$1" ] && [ -n "$2" ];then
+
+	if [ "$1" = "web" ]; then
+		echo "Web"
+		install_web $1 $2
+	elif [ "$1" = "local" ]; then
+		echo "Local"
+		install_local $1 $2
+	else
+		echo "Invalid first argument"
+		exit
+	fi
+
+
+else
+	echo "Missing argument"
+	exit
+fi
+
+
+
+
+exit
