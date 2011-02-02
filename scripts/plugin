@@ -1,15 +1,18 @@
 #!/bin/bash
 #Plugin instalation tool
+#Version: 0.2
 
 #Get extension:  echo ${F##*.} - thanks to dualbus on #bash - freenode
 #Get file name: echo ${F##*/}
 #Get base:  echo ${F%*.}
+#Check if http: if [[ $var = http* ]] - thanks to e36freak on #bash - freenode
+
+
+
 
 PLUGIN_DIR="/usr/local/mcwebmin/minecraft/plugins/"
-#Must be chowned to the MCW user.
+#Must be chowned to the user running this script.
 TMP_DIR="/usr/local/mcwebmin/tmp/plugininstall/"
-
-PLUGIN_SOURCE="$2"
 
 #MORE OR LESS FINISHED!
 install_local() {
@@ -17,13 +20,13 @@ install_local() {
 	mkdir $TMP_DIR
 	cd $TMP_DIR
 	#Move the archive to the temporary folder
-	mv $2 ./
+	mv $1 ./
 
 	#Get file name
-	PLUGIN_FILENAME=${2##*/}
+	PLUGIN_FILENAME=${1##*/}
 
 	#Get file extension
-	EXTENSION=${2##*.}
+	EXTENSION=${1##*.}
 	echo "Extension: $EXTENSION"
 
 	#Get the file path to the plugin. Nothing else can be in the /tmp/minecraft/ folder.
@@ -49,7 +52,7 @@ install_local() {
 	fi
 
 	rm -r $TMP_DIR
-	exit 1
+	exit 0
 }
 
 
@@ -60,27 +63,56 @@ install_web() {
 	mkdir $TMP_DIR
 	cd $TMP_DIR
 
-
-	WEB_FILE_NAME=${2##*/}
-
-
-	wget $2
+	#Get file name from the address
+	WEB_FILE_NAME=${1##*/}
 	
-exit 1
+	echo "File name: $WEB_FILE_NAME"
+	
+	#Download the file
+	wget -q $1 --no-check-certificate
+	
+
+	#Get file extension
+	EXTENSION=${WEB_FILE_NAME##*.}
+	echo "Extension: $EXTENSION"
+	FILE_PATH="$TMP_DIR""$WEB_FILE_NAME"
+	echo "File path: $FILE_PATH"
+
+	#Decide what to do with the file
+	if [ "$EXTENSION" = "tar.gz" ] || [ "$EXTENSION" = "gz" ] || [ "$EXTENSION" = "tar" ]; then
+		tar -xf $FILE_PATH -C ./temp/
+		mv ./temp/* $PLUGIN_DIR
+	elif [ "$EXTENSION" = "zip" ]; then
+		unzip $FILE_PATH -d ./temp/
+		mv ./temp/* $PLUGIN_DIR
+	elif [ "$EXTENSION" = "jar" ]; then
+		mv $FILE_PATH $PLUGIN_DIR
+
+
+	else
+		echo "Unknown extension: $EXTENSION"
+		exit $?
+	fi
+
+	rm -r $TMP_DIR
+	
+exit 0
 
 
 }
 
 
-#Check if arguments are there, launch appropriate code.
-if [ -n "$1" ] && [ -n "$2" ];then
+#Check the link / path, launch appropriate code.
+if [ -n "$1" ];then
 
-	if [ "$1" = "web" ]; then
+	if [[ "$1" = http* ]]; then
 		echo "Web"
-		install_web $1 $2
-	elif [ "$1" = "local" ]; then
+		read
+		install_web $1
+	elif [[ "$1" = /* ]]; then
 		echo "Local"
-		install_local $1 $2
+		read
+		install_local $1
 	else
 		echo "Invalid first argument"
 		exit
@@ -88,11 +120,11 @@ if [ -n "$1" ] && [ -n "$2" ];then
 
 
 else
-	echo "Missing argument"
-	exit
+	echo "Invalid argument"
+	exit 1
 fi
 
 
 
 
-exit
+exit 0
